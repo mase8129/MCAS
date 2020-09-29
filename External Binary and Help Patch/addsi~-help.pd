@@ -1,0 +1,31 @@
+#N canvas 480 23 758 637 12;
+#X obj 25 16 addsi~;
+#X obj 230 339 addsi~;
+#X obj 216 428 dac~;
+#X msg 65 227 basefrequency 100, f 8;
+#X msg 339 228 LFO2frequency 20, f 17;
+#X msg 167 232 LFO1frequency 4, f 17;
+#X text 104 17 - additive sine wave synthesis with harmonics and 2
+LFOs;
+#X text 27 59 The addsi~ objects outputs a developed cosine wave with
+6 harmonics of random values added to it. The signal is further developed
+with 2 low frequency oscillators. LFO1 modulates the amplitude of the
+cosine base frequency. LFO2 modulates the amplitudes of its harmonics
+;
+#X obj 234 384 *~;
+#X obj 427 374 line~;
+#X obj 430 311 hsl 128 15 0 1 0 0 empty empty volume 135 6 0 10 -262144
+-1 -1 3600 1;
+#X text 69 171 addsi~ takes messages containing pairs of parameter-name
+and float value in Hz;
+#X text 86 556 It is reccomended to pair this patch with an example
+patch for creating a phone controlled sound experience using Pdparty.
+Find out more here: https://github.com/mase8129/MCAS;
+#X connect 1 0 8 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 2 1;
+#X connect 9 0 8 1;
+#X connect 10 0 9 0;

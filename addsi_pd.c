@@ -30,7 +30,7 @@ typedef struct addsi_tilde
 {
     t_object  x_obj; /**< Necessary for every signal object in Pure Data*/
     t_sample f; /**< Also necessary for signal objects, float dummy dataspace for converting a float to signal if no signal is connected (CLASS_MAINSIGNALIN) */
-    addsi *osc; /**< custom addsi type containing all signal generating parameters and buffer data*/
+    addsi *osc; /**< custom addsi type containing all signal generating parameters and wavetables*/
     t_outlet *out; /**< needed to store handles to the outlet of the signal*/
 } addsi_tilde;
 
