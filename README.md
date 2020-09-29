@@ -11,6 +11,6 @@ In order to use the addsi~ external from [External Binary](/External Binary and 
 ### Using addsi~ with PdParty
 addsi was created to be used with your smartphone! How to?
 1. Download [PdParty](http://danomatika.com/code/pdparty/guide) (iOS) or  [DroidParty](http://droidparty.net) (Android) and 
-2. Grab the smartphone patch from [Sample Patches](/Sample Patches) and move it to your device and start it. Tap the buttons to send OSC messages containing accelerometer and gyroscope data. Make sure to set the host IP correctly in the OSC settings, to match the IP adress of you computer!
+2. Grab the smartphone patch from [Sample Patches](Sample Patches) and move it to your device and start it. Tap the buttons to send OSC messages containing accelerometer and gyroscope data. Make sure to set the host IP correctly in the OSC settings, to match the IP adress of you computer!
 3. Start the addsi~patch.pd from [Sample Patches](/Sample Patches) on your computer
 4. Have fun!
