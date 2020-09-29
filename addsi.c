@@ -5,7 +5,6 @@
  * @brief Implementation of the external's working code <br>
  * Includes all functions needed to create the additive synthesis of ~addsi
  */
-
 #include "addsi.h"
 
 /**
@@ -18,46 +17,46 @@ addsi *addsi_new(int sampleRate)
 {
     //allocating memory and setting base value
     addsi *x = (addsi *)malloc(sizeof(addsi));
-    x->buffer = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
-    x->envelopeTable = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
-    x->lfo1_table = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
-    x->lfo2_Table = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
-    x->sampleRate = sampleRate;
+    x->tableSize = sampleRate;
+    x->lookupTable1 = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
+    x->envelopeTable = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
+    x->LFO1_Table = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
+    x->LFO2_Table = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
     
     // setting base values for sine oscillator
-    x->sine_currentIndex = 0;
-    x->sine_basefrequency = 440;
+    x->currentIndex = 0;
+    x->basefrequency = 440;
     x->numberOfHarmonics = MAXNUMBEROFHARMONICS;
     
-    // setting base values for lfo1
-    x->lfo1_frequency = 0.1;
-    x->lfo1_currentIndex = 0;
-    x->lfo1_depth = 1;
+    // setting base values for LFO1
+    x->LFO1frequency = 0.1;
+    x->LFO1_currentIndex = 0;
+    x->LFO1_depth = 1;
     
-    //Generating Triangle Wavetables for LFO1:
+    //Generating Triangle Wavetable for LFO1:
     for(int t = 0; t < sampleRate/2; t++)
     {
-        x->lfo1_table[t] = 2 * (float) t/ (float) (sampleRate/2) - 1;
+        x->LFO1_Table[t] = 2 * (float) t/ (float) (sampleRate/2) - 1;
     }
     for(int t = sampleRate/2; t < sampleRate; t++)
     {
-        x->lfo1_table[t] = 1 -
+        x->LFO1_Table[t] = 1 -
         (2 * (float) (t-sampleRate/2) / (float) (sampleRate/2));
     }
     
     // setting base values for LFO2
-    x->lfo2_frequency = 0.1;
-    x->lfo2_currentIndex = 0;
-    x->lfo2_depth = 2;
+    x->LFO2frequency = 0.1;
+    x->LFO2_currentIndex = 0;
+    x->LFO2_depth = 2;
     
     
     //Generating cos Wavetable for LFO2:
     float stepSizeLFO2 = (M_PI*2) / (float)sampleRate;
     float currentXLFO2 = 0;
     
-    for(int i = 0; i < x->sampleRate; i++)
+    for(int i = 0; i < x->tableSize; i++)
     {
-        x->lfo2_Table[i] = cosf(currentXLFO2);
+        x->LFO2_Table[i] = cosf(currentXLFO2);
         
         currentXLFO2 += stepSizeLFO2;
     }
@@ -69,15 +68,15 @@ addsi *addsi_new(int sampleRate)
         x->harmonicIndex[i] = 0;
         x->harmonicGain[i] = (float)rand()/RAND_MAX;
     }
-    
+       
     // Create sine wavetable with amplitude of 1
     
     float stepSize = (M_PI*2) / (float)sampleRate;
     float currentX = 0;
     
-    for(int i = 0; i < x->sampleRate; i++)
+    for(int i = 0; i < x->tableSize; i++)
     {
-        x->buffer[i] = sinf(currentX);
+        x->lookupTable1[i] = sinf(currentX);
         x->envelopeTable[i] = 1;
         
         currentX += stepSize;
@@ -93,11 +92,13 @@ addsi *addsi_new(int sampleRate)
  */
 void addsi_free(addsi *x)
 {
-    vas_mem_free(x->buffer);
+    vas_mem_free(x->lookupTable1);
     vas_mem_free(x->envelopeTable);
-    vas_mem_free(x->lfo1_table);
-    vas_mem_free(x->lfo2_Table);
+    vas_mem_free(x->LFO1_Table);
+    vas_mem_free(x->LFO2_Table);
+    
     free(x);
+    
 }
 
 /**
@@ -111,83 +112,89 @@ void addsi_free(addsi *x)
  */
 void addsi_process(addsi *x, float *in, float *out, int vectorSize)
 {
+    // set i as buffer index helper based on the size of the I-O vectors
     int i = vectorSize;
     
+    // set buffer variables for sine wave oscillator and both LFOs
+    float buff;
     float LFOosc;
     float LFO2osc;
-    float buff;
+
+    // help veriables for normalizing
+    int c, cc;
+    // temporary variable for storing the maximum value of the output vector
+    float maximum;
     
-    
-    // Größe des float arrays
+    // Calculate size of the float array
     int(size) = sizeof(&out) / sizeof(float);
     
+    // start the processing using a while loop counting down to the beginning of the output vector
     while(i--)
     {
         
-        //LFO1
-        int LFO1_index = floor(x->lfo1_currentIndex);
-        LFOosc =  (1- x->lfo1_depth) + x->lfo1_depth * pow(x->lfo1_table[LFO1_index],2);
+        //LFO1: adjust the LFO2 wave table by the set LFO strength
+        int LFO1_index = floor(x->LFO1_currentIndex);
+        LFOosc =  (1- x->LFO1_depth) + x->LFO1_depth * pow(x->LFO1_Table[LFO1_index],2);
        
-        x->lfo1_currentIndex += x->lfo1_frequency;
+        x->LFO1_currentIndex += x->LFO1frequency;
         
-        if(x->lfo1_currentIndex >= x->sampleRate)
-            x->lfo1_currentIndex -= x->sampleRate;
+        if(x->LFO1_currentIndex >= x->tableSize)
+            x->LFO1_currentIndex -= x->tableSize;
         
-        //LFO2
-        int LFO2_index = floor(x->lfo2_currentIndex);
-        LFO2osc =  (1- x->lfo2_depth) + x->lfo2_depth * pow(x->lfo2_Table[LFO2_index],2);
+        //LFO2: adjust the LFO2 wave table by the set LFO strength
+        int LFO2_index = floor(x->LFO2_currentIndex);
+        LFO2osc =  (1- x->LFO2_depth) + x->LFO2_depth * pow(x->LFO2_Table[LFO2_index],2);
         
-        x->lfo2_currentIndex += x->lfo2_frequency;
+        x->LFO2_currentIndex += x->LFO2frequency;
         
-        if(x->lfo2_currentIndex >= x->sampleRate)
-            x->lfo2_currentIndex -= x->sampleRate;
+        if(x->LFO2_currentIndex >= x->tableSize)
+            x->LFO2_currentIndex -= x->tableSize;
         
         
-        //Sine
-        int intIndex1 = floor(x->sine_currentIndex);
-        buff = x->buffer[intIndex1];
-        x->sine_currentIndex += x->sine_basefrequency;
+        // adjust the sine wave function based on the set base frequency
+        int intIndex1 = floor(x->currentIndex);
+        buff = x->lookupTable1[intIndex1];
+        x->currentIndex += x->basefrequency;
         
-        if(x->sine_currentIndex >= x->sampleRate)
-            x->sine_currentIndex -= x->sampleRate;
+        if(x->currentIndex >= x->tableSize)
+            x->currentIndex -= x->tableSize;
         
-        //harmonics
+        // Add the LFo2 developed harmonics to the signal
         for(int i = 0; i < MAXNUMBEROFHARMONICS; i++)
         {
-            float harmonicFreq1 = x->sine_basefrequency * (i+1);
+            float harmonicFreq1 = x->basefrequency * (i+1);
             intIndex1 = floor(x->harmonicIndex[i]);
-            buff += x->buffer[intIndex1] * (x->harmonicGain[i] * LFO2osc) ;
+            buff += x->lookupTable1[intIndex1] * (x->harmonicGain[i] * LFO2osc) ;
             x->harmonicIndex[i] += harmonicFreq1;
             
-            if(x->harmonicIndex[i] >= x->sampleRate)
-                x->harmonicIndex[i] -= x->sampleRate;
+            if(x->harmonicIndex[i] >= x->tableSize)
+                x->harmonicIndex[i] -= x->tableSize;
         }
         
         
-        //hier nochmal mit buff also reinem addsine, sodass man nicht nur LFO hört
+        // add some more pure sine wave flavour, so the LFOs are not too present
         *out +=  buff + 0.3*(buff * LFOosc);
         
-        
+        // write out into the envelope table. Currently not used any further.
         *out *= x->envelopeTable[x->envelopeIndex++];
-        if(x->envelopeIndex >= x->sampleRate)
+        if(x->envelopeIndex >= x->tableSize)
         x->envelopeIndex = 1;
         
+        //increment the output vector array pointer by one, to iterate through all values during the while loop
         out++;
+     
+        // Normalize the output vector
         
-        // Normalising of the 256 float-sample arrays
-        int c, cc;
-        float maximum;
-        for (c=0; c < size; c++)
-            scanf("%f", &out[c]);
-
+        // set the first maximum
         maximum = out[0];
 
+        // search for the maximum value in the output vector and temporary store it
         for(c=1; c < size;c++){
             if(out[c] > maximum){
                 maximum = out[c];
             }
         }
-        // eigentliche Normalisation
+        // normalize all values in the output values by the maximum value
         for(cc=1; c<size; c++){
             out[cc] = out[cc] / maximum;
         }
@@ -195,21 +202,41 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
 }
 
 
-
+/**
+ * @brief Sets a base frequency for the osc<br>
+ * @param x A pointer to the addsi object <br>
+ * @param basefrequency float containing the Hz value of the base frequency of the osc <br>
+ *
+ */
 void addsi_setbasefrequency(addsi *x, float basefrequency)
 {
     if(basefrequency > 0)
-        x->sine_basefrequency = basefrequency;
+        x->basefrequency = basefrequency;
 }
 
+/**
+ * @brief Sets the strength of the first LFO<br>
+ * @param x A pointer to an addsi_tilde object <br>
+ * @param LFO1frequency float value setting the strength of the first LFO<br>
+ *
+ */
 void addsi_setLFO1frequency(addsi *x, float LFO1frequency)
 {
     if(LFO1frequency > 0)
-        x->lfo1_frequency = LFO1frequency;
+        x->LFO1frequency = LFO1frequency;
 }
 
+
+/**
+ * @brief Sets the strength of the second LFO<br>
+ * @param x A pointer to an addsi_tilde object <br>
+ * @param LFO2frequency float value setting the strength of the second LFO<br>
+ *
+ */
 void addsi_setLFO2frequency(addsi *x, float LFO2frequency)
 {
     if(LFO2frequency > 0)
-        x->lfo2_frequency = LFO2frequency;
+        x->LFO2frequency = LFO2frequency;
 }
+
+

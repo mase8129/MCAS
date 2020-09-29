@@ -29,23 +29,23 @@
  */
 typedef struct addsi
     {
-        int sampleRate; /**< Sample rate. Note that this is hard coded to 44100 in this external*/
-        float sine_currentIndex; /**< Current working index of the sine oscillator */
-        float sine_basefrequency; /**< Working frequency of the sine oscillator*/
-        float *buffer; /**< Buffer array*/
+        int tableSize; /**< Size of waveform tables, based on sample rate. Note that this is hard coded to 44100 in this external*/
+        float currentIndex; /**< Current working index of the sine oscillator */
+        float basefrequency; /**< Working frequency of the sine oscillator*/
+        float *lookupTable1; /**< SIne wave table*/
         float numberOfHarmonics; /**< Number of added harmonics to the baseFrequency*/
         float harmonicIndex[MAXNUMBEROFHARMONICS]; /**< Index of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
         float harmonicGain[MAXNUMBEROFHARMONICS]; /**< Gain of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
-        float *envelopeTable; /**< Help array for enveloping*/
-        int envelopeIndex; /**< Current working index in envelopeTable*/
-        float *lfo1_table; /**< Working array of the first LFO */
-        float lfo1_frequency; /**<  Working frequency of the first LFO*/
-        float lfo1_depth; /**< Depth of the first LFO */
-        float lfo1_currentIndex; /**< Current working index of lfo1_table */
-        float *lfo2_Table; /**< Working array of the second LFO */
-        float lfo2_frequency; /**< Working frequency of the second LFO */
-        float lfo2_depth; /**< Depth of the second LFO */
-        float lfo2_currentIndex; /**< Current working index of lfo2_table*/
+        float *envelopeTable; /**< Help array for enveloping. Currently this is not used*/
+        int envelopeIndex; /**< Current working index in envelopeTable. Currently this is not used*/
+        float *LFO1_Table; /**< Working array of the first LFO */
+        float LFO1frequency; /**<  Working frequency of the first LFO*/
+        float LFO1_depth; /**< Depth of the first LFO */
+        float LFO1_currentIndex; /**< Current working index of lfo1_table */
+        float *LFO2_Table; /**< Working array of the second LFO */
+        float LFO2frequency; /**< Working frequency of the second LFO */
+        float LFO2_depth; /**< Depth of the second LFO */
+        float LFO2_currentIndex; /**< Current working index of lfo2_table*/
         
     } addsi;
 
@@ -60,8 +60,13 @@ void addsi_process(addsi *x, float *in, float *out, int vector_size);
 void addsi_setbasefrequency(addsi *x, float basefrequency);
 
 void addsi_setLFO1frequency(addsi *x, float LFO1frequency);
+
+void addsi_setLFO1depth(addsi *x, float LFO1depth);
     
 void addsi_setLFO2frequency(addsi *x, float LFO2frequency);
 
+void addsi_setharmmulti(addsi *x, float harmmulti);
+
+//void addsi_setHarmonics1(addsi *x, float harm1);
 
 #endif /* addsi_h */
