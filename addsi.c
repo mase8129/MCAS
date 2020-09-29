@@ -10,7 +10,7 @@
 
 /**
  * @brief Sets up new addsi object on first run and creates wave tables<br>
- * This function sets up all we need to get started with the processing
+ * This function sets up all we need to get started with processing
  * @param sampleRate int containing the used sample rate. Note that at this time this is hard coded to 44100 in addsi_pd.c and will not work with differing sample rates<br>
  * @return An addsi struct <br>
  */
@@ -69,7 +69,9 @@ addsi *addsi_new(int sampleRate)
         x->harmonicIndex[i] = 0;
         x->harmonicGain[i] = (float)rand()/RAND_MAX;
     }
-       
+    
+    // Create sine wavetable with amplitude of 1
+    
     float stepSize = (M_PI*2) / (float)sampleRate;
     float currentX = 0;
     
@@ -84,7 +86,11 @@ addsi *addsi_new(int sampleRate)
     return x;
 }
 
-
+/**
+ * @brief Frees the memory<br>
+ * Implements mandatory memory management function
+ * @param *x pointer to addsi struct<br>
+ */
 void addsi_free(addsi *x)
 {
     vas_mem_free(x->buffer);
@@ -94,16 +100,23 @@ void addsi_free(addsi *x)
     free(x);
 }
 
-
+/**
+ * @brief Main method: Implementing the additive synthesis of ~addsi<br>
+ * Processes the wave tables
+ * @param *x pointer to an addsi struct<br>
+ * @param *in pointer to sound input vector (currently unused)
+ * @param *out pointer to sound output vector
+ * @param vectorSize size of the sound vectors
+ * @return An addsi struct <br>
+ */
 void addsi_process(addsi *x, float *in, float *out, int vectorSize)
 {
     int i = vectorSize;
+    
     float LFOosc;
     float LFO2osc;
     float buff;
     
-    int c, cc; // Normalisierung des 256 float-sample arrays
-    float maximum;
     
     // Größe des float arrays
     int(size) = sizeof(&out) / sizeof(float);
@@ -160,7 +173,10 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
         x->envelopeIndex = 1;
         
         out++;
-     
+        
+        // Normalising of the 256 float-sample arrays
+        int c, cc;
+        float maximum;
         for (c=0; c < size; c++)
             scanf("%f", &out[c]);
 
