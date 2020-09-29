@@ -30,8 +30,9 @@ typedef struct addsi_tilde
 {
     t_object  x_obj;
     t_sample f;
-    addsi *delay;
-    t_outlet *x_out;
+    addsi *osc;
+    
+    t_outlet *out;
 } addsi_tilde;
 
 /**
@@ -50,7 +51,7 @@ t_int *addsi_tilde_perform(t_int *w)
     t_sample  *out =  (t_sample *)(w[3]);
     int n =  (int)(w[4]);
 
-   addsi_process(x->delay, in, out, n);
+   addsi_process(x->osc, in, out, n);
 
     /* return a pointer to the dataspace for the next dsp-object */
     return (w+5);
@@ -78,41 +79,54 @@ void addsi_tilde_dsp(addsi_tilde *x, t_signal **sp)
 
 void addsi_tilde_free(addsi_tilde *x)
 {
-    outlet_free(x->x_out);
-    addsi_free(x->delay);
+    outlet_free(x->out);
+    addsi_free(x->osc);
 }
 
-/**
- * @related addsi_tilde
- * @brief Creates a new addsi_tilde object.<br>
- * @param f Sets the initial gain value. <br>
- * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
- */
-
+//setexternTABLE/ARRAY:
 void *addsi_tilde_new(t_floatarg f)
 {
     addsi_tilde *x = (addsi_tilde *)pd_new(addsi_tilde_class);
     
     //The main inlet is created automatically
-    x->x_out = outlet_new(&x->x_obj, &s_signal);
-    x->delay = addsi_new(44100);
+    x->out = outlet_new(&x->x_obj, &s_signal);
+    x->osc = addsi_new(44100);
 
     return (void *)x;
 }
 
-/**
- * @related addsi_tilde
- * @brief Sets the gain adjustment parameter. <br>
- * @param x A pointer the addsi_tilde object <br>
- * @param  <br>
- * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
- */
-
-void addsi_tilde_setDelayTime(addsi_tilde *x, float delayTime)
+void addsi_tilde_setbasefrequency(addsi_tilde *x, float basefrequency)
 {
-    addsi_setDelayTime(x->delay, delayTime);   
+    addsi_setbasefrequency(x->osc, basefrequency);
 }
 
+void addsi_tilde_setLFO1frequency(addsi_tilde *x, float LFO1frequency)
+{
+    addsi_setLFO1frequency(x->osc, LFO1frequency);
+}
+
+void addsi_tilde_setLFO1depth(addsi_tilde *x, float LFO1depth)
+{
+    addsi_setLFO1depth(x->osc, LFO1depth);
+}
+
+void addsi_tilde_setLFO2frequency(addsi_tilde *x, float LFO2frequency)
+{
+    addsi_setLFO2frequency(x->osc, LFO2frequency);
+}
+
+void addsi_tilde_sethammulti(addsi_tilde *x, float harmmulti)
+{
+    addsi_setharmmulti(x->osc, harmmulti);
+}
+/*
+void addsi_tilde_setHarmonics1(addsi_tilde *x, float harm1)
+{
+    addsi_setHarmonics1(x->osc, harm1);
+}
+
+*/
+ 
 /**
  * @related addsi_tilde
  * @brief Setup of addsi_tilde <br>
@@ -121,17 +135,24 @@ void addsi_tilde_setDelayTime(addsi_tilde *x, float delayTime)
 
 void addsi_tilde_setup(void)
 {
-      addsi_tilde_class = class_new(gensym("addsi~"),
-            (t_newmethod)addsi_tilde_new,
-            (t_method)addsi_tilde_free,
-        sizeof(addsi_tilde),
-            CLASS_DEFAULT,
-            A_DEFFLOAT, 0);
-
-      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_dsp, gensym("dsp"), 0);
-
-      // this adds the gain message to our object
-      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setDelayTime, gensym("delaytime"), A_DEFFLOAT,0);
-
-      CLASS_MAINSIGNALIN(addsi_tilde_class, addsi_tilde, f);
+    addsi_tilde_class = class_new(gensym("addsi~"),
+                                      (t_newmethod)addsi_tilde_new,
+                                      (t_method)addsi_tilde_free,
+                                      sizeof(addsi_tilde),
+                                      CLASS_DEFAULT,
+                                      A_DEFFLOAT, 0);
+    
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_dsp, gensym("dsp"), 0);
+    
+    // this adds the freq1 message to our object
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setbasefrequency, gensym("basefrequency"), A_DEFFLOAT, 0);
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO1frequency, gensym("LFO1frequency"), A_DEFFLOAT, 0);
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO1depth, gensym("LFO1depth"), A_DEFFLOAT, 0);
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_sethammulti, gensym("harmmulti"), A_DEFFLOAT, 0);
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO2frequency, gensym("LFO2frequency"), A_DEFFLOAT, 0);
+    /*
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setHarmonics1, gensym("harm1"), A_DEFFLOAT, 0);
+    */
+    
+    CLASS_MAINSIGNALIN(addsi_tilde_class, addsi_tilde, f);
 }
