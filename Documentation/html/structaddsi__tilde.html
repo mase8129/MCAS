@@ -110,14 +110,136 @@ Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
 </td></tr>
 <tr class="memitem:a49a43c8620f1a89cef0a71df6911616b"><td class="memItemLeft" align="right" valign="top">t_int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#a49a43c8620f1a89cef0a71df6911616b">addsi_tilde_perform</a> (t_int *w)</td></tr>
-<tr class="memdesc:a49a43c8620f1a89cef0a71df6911616b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the volume adjusted output vector<br  />
+<tr class="memdesc:a49a43c8620f1a89cef0a71df6911616b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform function, mandatory for PureData. Calculates the output vector<br  />
+ For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
   <a href="structaddsi__tilde.html#a49a43c8620f1a89cef0a71df6911616b">More...</a><br /></td></tr>
 <tr class="separator:a49a43c8620f1a89cef0a71df6911616b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05f6a6c36c9f3b8b5b8e024918a3814c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#a05f6a6c36c9f3b8b5b8e024918a3814c">addsi_tilde_dsp</a> (<a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *x, <a class="el" href="struct__signal.html">t_signal</a> **sp)</td></tr>
+<tr class="memdesc:a05f6a6c36c9f3b8b5b8e024918a3814c"><td class="mdescLeft">&#160;</td><td class="mdescRight">DSP function mandatory for PureData. Adds addsi_tilde_perform to the signal chain. <br  />
+ For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
+  <a href="structaddsi__tilde.html#a05f6a6c36c9f3b8b5b8e024918a3814c">More...</a><br /></td></tr>
+<tr class="separator:a05f6a6c36c9f3b8b5b8e024918a3814c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08150a75089ce62c3438c51a5bc3ff6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#a08150a75089ce62c3438c51a5bc3ff6b">addsi_tilde_free</a> (<a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *x)</td></tr>
+<tr class="memdesc:a08150a75089ce62c3438c51a5bc3ff6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory Management function mandatory for Pure Data. Frees our <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object. <br  />
+ For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
+  <a href="structaddsi__tilde.html#a08150a75089ce62c3438c51a5bc3ff6b">More...</a><br /></td></tr>
+<tr class="separator:a08150a75089ce62c3438c51a5bc3ff6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c2e0b57ce0971af4e346ac8125b4201"><td class="memItemLeft" align="right" valign="top"><a id="a4c2e0b57ce0971af4e346ac8125b4201"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#a4c2e0b57ce0971af4e346ac8125b4201">addsi_tilde_new</a> (t_floatarg <a class="el" href="structaddsi__tilde.html#a3b27de018058e7941a2f36d7a28c2cda">f</a>)</td></tr>
+<tr class="memdesc:a4c2e0b57ce0971af4e346ac8125b4201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object and sets its outlet and sampling rate. note that the externals sampling rate is set at 44100 <br  />
+ For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
+ <br /></td></tr>
+<tr class="separator:a4c2e0b57ce0971af4e346ac8125b4201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c23e68ed3ff94d2367ccd3a70b699c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#af5c23e68ed3ff94d2367ccd3a70b699c">addsi_tilde_setbasefrequency</a> (<a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *x, float basefrequency)</td></tr>
+<tr class="memdesc:af5c23e68ed3ff94d2367ccd3a70b699c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for the base frequency setting of the sine osc<br  />
+  <a href="structaddsi__tilde.html#af5c23e68ed3ff94d2367ccd3a70b699c">More...</a><br /></td></tr>
+<tr class="separator:af5c23e68ed3ff94d2367ccd3a70b699c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c1bd6faab1c4429b560442c3dd5308"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#a98c1bd6faab1c4429b560442c3dd5308">addsi_tilde_setLFO1frequency</a> (<a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *x, float LFO1frequency)</td></tr>
+<tr class="memdesc:a98c1bd6faab1c4429b560442c3dd5308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for the strength setting of the first LFO<br  />
+  <a href="structaddsi__tilde.html#a98c1bd6faab1c4429b560442c3dd5308">More...</a><br /></td></tr>
+<tr class="separator:a98c1bd6faab1c4429b560442c3dd5308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0495e70dcb5bf0d217e6e8c79050e26b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#a0495e70dcb5bf0d217e6e8c79050e26b">addsi_tilde_setLFO2frequency</a> (<a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *x, float LFO2frequency)</td></tr>
+<tr class="memdesc:a0495e70dcb5bf0d217e6e8c79050e26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper of the strength setting of the second LFO<br  />
+  <a href="structaddsi__tilde.html#a0495e70dcb5bf0d217e6e8c79050e26b">More...</a><br /></td></tr>
+<tr class="separator:a0495e70dcb5bf0d217e6e8c79050e26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addceefe58fa9a5ac9bf2336eeb6d36c9"><td class="memItemLeft" align="right" valign="top"><a id="addceefe58fa9a5ac9bf2336eeb6d36c9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi__tilde.html#addceefe58fa9a5ac9bf2336eeb6d36c9">addsi_tilde_setup</a> (void)</td></tr>
+<tr class="memdesc:addceefe58fa9a5ac9bf2336eeb6d36c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup function<br  />
+ This function (or functions called by it) declares the new classes and their properties of the addsi-tilde external. It is only called once, when the external is loaded. <br  />
+ For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
+ <br /></td></tr>
+<tr class="separator:addceefe58fa9a5ac9bf2336eeb6d36c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The Pure Data struct of the addsi~ object. <br  />
  </p>
 </div><h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a05f6a6c36c9f3b8b5b8e024918a3814c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05f6a6c36c9f3b8b5b8e024918a3814c">&#9670;&nbsp;</a></span>addsi_tilde_dsp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_tilde_dsp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__signal.html">t_signal</a> **&#160;</td>
+          <td class="paramname"><em>sp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DSP function mandatory for PureData. Adds addsi_tilde_perform to the signal chain. <br  />
+ For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer the <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+    <tr><td class="paramname">sp</td><td>A pointer to the input and output vectors <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a08150a75089ce62c3438c51a5bc3ff6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08150a75089ce62c3438c51a5bc3ff6b">&#9670;&nbsp;</a></span>addsi_tilde_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_tilde_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Memory Management function mandatory for Pure Data. Frees our <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object. <br  />
+ For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to an <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a49a43c8620f1a89cef0a71df6911616b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49a43c8620f1a89cef0a71df6911616b">&#9670;&nbsp;</a></span>addsi_tilde_perform()</h2>
 
@@ -142,22 +264,10 @@ Related Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Calculates the volume adjusted output vector<br  />
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">w</td><td>A pointer to the object, input and output vectors. <br  />
- For more information please refer to the Pure Data Docs <br  />
- The function calls the addsi_perform method. <br  />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the signal chain right behind the <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object. <br  />
-</dd></dl>
 <p>Perform function, mandatory for PureData. Calculates the output vector<br  />
  For more information please refer to the <a href="https://github.com/pure-data/externals-howto">Pure Data Docs </a> <br  />
- </p><dl class="params"><dt>Parameters</dt><dd>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">w</td><td>A pointer to the object, input and output vectors. <br  />
  </td></tr>
@@ -166,6 +276,150 @@ Related Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the signal chain right behind the <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object. <br  />
  </dd></dl>
+
+</div>
+</div>
+<a id="af5c23e68ed3ff94d2367ccd3a70b699c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c23e68ed3ff94d2367ccd3a70b699c">&#9670;&nbsp;</a></span>addsi_tilde_setbasefrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_tilde_setbasefrequency </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>basefrequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrapper for the base frequency setting of the sine osc<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to an <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+    <tr><td class="paramname">basefrequency</td><td>float containing the Hz value of the base frequency of the sine osc <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a98c1bd6faab1c4429b560442c3dd5308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c1bd6faab1c4429b560442c3dd5308">&#9670;&nbsp;</a></span>addsi_tilde_setLFO1frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_tilde_setLFO1frequency </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>LFO1frequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrapper for the strength setting of the first LFO<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to an <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+    <tr><td class="paramname">LFO1frequency</td><td>float value setting the strength of the first LFO<br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0495e70dcb5bf0d217e6e8c79050e26b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0495e70dcb5bf0d217e6e8c79050e26b">&#9670;&nbsp;</a></span>addsi_tilde_setLFO2frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_tilde_setLFO2frequency </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi__tilde.html">addsi_tilde</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>LFO2frequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrapper of the strength setting of the second LFO<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to an <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+    <tr><td class="paramname">LFO2frequency</td><td>float value setting the strength of the second LFO<br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

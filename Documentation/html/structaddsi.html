@@ -83,7 +83,8 @@ $(document).ready(function(){initNavTree('structaddsi.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#related">Related Functions</a>  </div>
   <div class="headertitle">
 <div class="title">addsi Struct Reference</div>  </div>
 </div><!--header-->
@@ -131,11 +132,322 @@ Data Fields</h2></td></tr>
 <tr class="separator:a9c0692a02ea387a66aae3f6cf31dd451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f13be2e30e9d6a63278b2881f40100e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a1f13be2e30e9d6a63278b2881f40100e">LFO2_currentIndex</a></td></tr>
 <tr class="separator:a1f13be2e30e9d6a63278b2881f40100e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
+Related Functions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
+</td></tr>
+<tr class="memitem:a07b45b069efcbaefd3061e53520210ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaddsi.html">addsi</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a07b45b069efcbaefd3061e53520210ba">addsi_new</a> (int sampleRate)</td></tr>
+<tr class="memdesc:a07b45b069efcbaefd3061e53520210ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up new addsi object on first run and creates wave tables<br  />
+ This function sets up all we need to get started with processing.  <a href="structaddsi.html#a07b45b069efcbaefd3061e53520210ba">More...</a><br /></td></tr>
+<tr class="separator:a07b45b069efcbaefd3061e53520210ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad240d3c54471ef024010c289fcb5f8e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#ad240d3c54471ef024010c289fcb5f8e3">addsi_free</a> (<a class="el" href="structaddsi.html">addsi</a> *x)</td></tr>
+<tr class="memdesc:ad240d3c54471ef024010c289fcb5f8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory<br  />
+ Implements mandatory memory management function.  <a href="structaddsi.html#ad240d3c54471ef024010c289fcb5f8e3">More...</a><br /></td></tr>
+<tr class="separator:ad240d3c54471ef024010c289fcb5f8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd8c84d1e98bed24fc3f77df7d799b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#accd8c84d1e98bed24fc3f77df7d799b5">addsi_process</a> (<a class="el" href="structaddsi.html">addsi</a> *x, float *in, float *out, int vectorSize)</td></tr>
+<tr class="memdesc:accd8c84d1e98bed24fc3f77df7d799b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main method: Implementing the additive synthesis of ~addsi<br  />
+ Processes the wave tables.  <a href="structaddsi.html#accd8c84d1e98bed24fc3f77df7d799b5">More...</a><br /></td></tr>
+<tr class="separator:accd8c84d1e98bed24fc3f77df7d799b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c4f3db700edafd0b55623e92360709"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a14c4f3db700edafd0b55623e92360709">addsi_setbasefrequency</a> (<a class="el" href="structaddsi.html">addsi</a> *x, float <a class="el" href="structaddsi.html#a79ca010c0b70a5b34c49c2969cfdd653">basefrequency</a>)</td></tr>
+<tr class="memdesc:a14c4f3db700edafd0b55623e92360709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a base frequency for the osc<br  />
+  <a href="structaddsi.html#a14c4f3db700edafd0b55623e92360709">More...</a><br /></td></tr>
+<tr class="separator:a14c4f3db700edafd0b55623e92360709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97698cef413ff568248ae1287241bb5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a97698cef413ff568248ae1287241bb5a">addsi_setLFO1frequency</a> (<a class="el" href="structaddsi.html">addsi</a> *x, float <a class="el" href="structaddsi.html#a6d9c3391c6b806109d92b8302341d5ab">LFO1frequency</a>)</td></tr>
+<tr class="memdesc:a97698cef413ff568248ae1287241bb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the strength of the first LFO<br  />
+  <a href="structaddsi.html#a97698cef413ff568248ae1287241bb5a">More...</a><br /></td></tr>
+<tr class="separator:a97698cef413ff568248ae1287241bb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846bcf30812aa9f1c2327ea81fcfc443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a846bcf30812aa9f1c2327ea81fcfc443">addsi_setLFO2frequency</a> (<a class="el" href="structaddsi.html">addsi</a> *x, float <a class="el" href="structaddsi.html#a10e8fb95819ffa362cda5529d008b427">LFO2frequency</a>)</td></tr>
+<tr class="memdesc:a846bcf30812aa9f1c2327ea81fcfc443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the strength of the second LFO<br  />
+  <a href="structaddsi.html#a846bcf30812aa9f1c2327ea81fcfc443">More...</a><br /></td></tr>
+<tr class="separator:a846bcf30812aa9f1c2327ea81fcfc443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal data structure containing the parameters for the oscillators and buffer data variables <br  />
  </p>
-</div><h2 class="groupheader">Field Documentation</h2>
+</div><h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ad240d3c54471ef024010c289fcb5f8e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad240d3c54471ef024010c289fcb5f8e3">&#9670;&nbsp;</a></span>addsi_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi.html">addsi</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frees the memory<br  />
+ Implements mandatory memory management function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*x</td><td>pointer to addsi struct<br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a07b45b069efcbaefd3061e53520210ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b45b069efcbaefd3061e53520210ba">&#9670;&nbsp;</a></span>addsi_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structaddsi.html">addsi</a> * addsi_new </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sampleRate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets up new addsi object on first run and creates wave tables<br  />
+ This function sets up all we need to get started with processing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sampleRate</td><td>int containing the used sample rate. Note that at this time this is hard coded to 44100 in <a class="el" href="addsi__pd_8c.html" title="Pure data integration of the addsi external  The file includes the basic setup needed in order for th...">addsi_pd.c</a> and will not work with differing sample rates<br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An addsi struct <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="accd8c84d1e98bed24fc3f77df7d799b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd8c84d1e98bed24fc3f77df7d799b5">&#9670;&nbsp;</a></span>addsi_process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_process </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi.html">addsi</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vectorSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main method: Implementing the additive synthesis of ~addsi<br  />
+ Processes the wave tables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*x</td><td>pointer to an addsi struct<br  />
+ </td></tr>
+    <tr><td class="paramname">*in</td><td>pointer to sound input vector (currently unused) </td></tr>
+    <tr><td class="paramname">*out</td><td>pointer to sound output vector </td></tr>
+    <tr><td class="paramname">vectorSize</td><td>size of the sound vectors </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An addsi struct <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="a14c4f3db700edafd0b55623e92360709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c4f3db700edafd0b55623e92360709">&#9670;&nbsp;</a></span>addsi_setbasefrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_setbasefrequency </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi.html">addsi</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>basefrequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a base frequency for the osc<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to the addsi object <br  />
+ </td></tr>
+    <tr><td class="paramname">basefrequency</td><td>float containing the Hz value of the base frequency of the osc <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a97698cef413ff568248ae1287241bb5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97698cef413ff568248ae1287241bb5a">&#9670;&nbsp;</a></span>addsi_setLFO1frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_setLFO1frequency </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi.html">addsi</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>LFO1frequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the strength of the first LFO<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to an <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+    <tr><td class="paramname">LFO1frequency</td><td>float value setting the strength of the first LFO<br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a846bcf30812aa9f1c2327ea81fcfc443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846bcf30812aa9f1c2327ea81fcfc443">&#9670;&nbsp;</a></span>addsi_setLFO2frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_setLFO2frequency </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi.html">addsi</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>LFO2frequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the strength of the second LFO<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to an <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+    <tr><td class="paramname">LFO2frequency</td><td>float value setting the strength of the second LFO<br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a79ca010c0b70a5b34c49c2969cfdd653"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79ca010c0b70a5b34c49c2969cfdd653">&#9670;&nbsp;</a></span>basefrequency</h2>
 
@@ -391,8 +703,9 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>External's Source/<a class="el" href="addsi_8h_source.html">addsi.h</a></li>
+<li>External's Source/<a class="el" href="addsi_8c.html">addsi.c</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

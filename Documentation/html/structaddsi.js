@@ -1,5 +1,11 @@
 var structaddsi =
 [
+    [ "addsi_free", "structaddsi.html#ad240d3c54471ef024010c289fcb5f8e3", null ],
+    [ "addsi_new", "structaddsi.html#a07b45b069efcbaefd3061e53520210ba", null ],
+    [ "addsi_process", "structaddsi.html#accd8c84d1e98bed24fc3f77df7d799b5", null ],
+    [ "addsi_setbasefrequency", "structaddsi.html#a14c4f3db700edafd0b55623e92360709", null ],
+    [ "addsi_setLFO1frequency", "structaddsi.html#a97698cef413ff568248ae1287241bb5a", null ],
+    [ "addsi_setLFO2frequency", "structaddsi.html#a846bcf30812aa9f1c2327ea81fcfc443", null ],
     [ "basefrequency", "structaddsi.html#a79ca010c0b70a5b34c49c2969cfdd653", null ],
     [ "currentIndex", "structaddsi.html#abd40131d012c1d7f6ad152072856a85d", null ],
     [ "envelopeIndex", "structaddsi.html#acb88db8b5268ae7f9802d01dcb85725e", null ],
