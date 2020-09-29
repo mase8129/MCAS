@@ -34,16 +34,9 @@ typedef struct addsi_tilde
     t_outlet *out; /**< needed to store handles to the outlet of the signal*/
 } addsi_tilde;
 
-/**
- * @related addsi_tilde
- * @brief Calculates the volume adjusted output vector<br>
- * @param w A pointer to the object, input and output vectors. <br>
- * For more information please refer to the Pure Data Docs <br>
- * The function calls the addsi_perform method. <br>
- * @return A pointer to the signal chain right behind the addsi_tilde object. <br>
- */
 
 /**
+ * @related addsi_tilde
  * @brief Perform function, mandatory for PureData. Calculates the output vector<br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  * @param w A pointer to the object, input and output vectors. <br>
@@ -63,6 +56,7 @@ t_int *addsi_tilde_perform(t_int *w)
 }
 
 /**
+ * @related addsi_tilde
  * @brief DSP function mandatory for PureData. Adds addsi_tilde_perform to the signal chain. <br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  * @param x A pointer the addsi_tilde object <br>
@@ -75,6 +69,7 @@ void addsi_tilde_dsp(addsi_tilde *x, t_signal **sp)
 }
 
 /**
+ * @related addsi_tilde
  * @brief Memory Management function mandatory for Pure Data. Frees our addsi_tilde object. <br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  * @param x A pointer to an addsi_tilde object <br>
@@ -88,6 +83,7 @@ void addsi_tilde_free(addsi_tilde *x)
 }
 
 /**
+ * @related addsi_tilde
  * @brief Creates new addsi_tilde object and sets its outlet and sampling rate. note that the externals sampling rate is set at 44100 <br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  */
@@ -103,6 +99,7 @@ void *addsi_tilde_new(t_floatarg f)
 }
 
 /**
+ * @related addsi_tilde
  * @brief Wrapper for the base frequency setting of the sine osc<br>
  * @param x A pointer to an addsi_tilde object <br>
  * @param basefrequency float containing the Hz value of the base frequency of the sine osc <br>
@@ -114,6 +111,7 @@ void addsi_tilde_setbasefrequency(addsi_tilde *x, float basefrequency)
 }
 
 /**
+ * @related addsi_tilde
  * @brief Wrapper for the strength setting of the first LFO<br>
  * @param x A pointer to an addsi_tilde object <br>
  * @param LFO1frequency float value setting the strength of the first LFO<br>
@@ -126,6 +124,7 @@ void addsi_tilde_setLFO1frequency(addsi_tilde *x, float LFO1frequency)
 
 
 /**
+ * @related addsi_tilde
  * @brief Wrapper of the strength setting of the second LFO<br>
  * @param x A pointer to an addsi_tilde object <br>
  * @param LFO2frequency float value setting the strength of the second LFO<br>
@@ -139,6 +138,7 @@ void addsi_tilde_setLFO2frequency(addsi_tilde *x, float LFO2frequency)
 
 
 /**
+ * @related addsi_tilde
  * @brief Setup function<br>
  * This function (or functions called by it) declares the new classes and their properties of the addsi-tilde external. It is only called once, when the external is loaded. <br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>

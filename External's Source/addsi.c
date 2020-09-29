@@ -8,6 +8,7 @@
 #include "addsi.h"
 
 /**
+ * @related addsi
  * @brief Sets up new addsi object on first run and creates wave tables<br>
  * This function sets up all we need to get started with processing
  * @param sampleRate int containing the used sample rate. Note that at this time this is hard coded to 44100 in addsi_pd.c and will not work with differing sample rates<br>
@@ -86,6 +87,7 @@ addsi *addsi_new(int sampleRate)
 }
 
 /**
+ * @related addsi
  * @brief Frees the memory<br>
  * Implements mandatory memory management function
  * @param *x pointer to addsi struct<br>
@@ -102,6 +104,7 @@ void addsi_free(addsi *x)
 }
 
 /**
+ * @related addsi
  * @brief Main method: Implementing the additive synthesis of ~addsi<br>
  * Processes the wave tables
  * @param *x pointer to an addsi struct<br>
@@ -203,6 +206,7 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
 
 
 /**
+ * @related addsi
  * @brief Sets a base frequency for the osc<br>
  * @param x A pointer to the addsi object <br>
  * @param basefrequency float containing the Hz value of the base frequency of the osc <br>
@@ -215,6 +219,7 @@ void addsi_setbasefrequency(addsi *x, float basefrequency)
 }
 
 /**
+ * @related addsi
  * @brief Sets the strength of the first LFO<br>
  * @param x A pointer to an addsi_tilde object <br>
  * @param LFO1frequency float value setting the strength of the first LFO<br>
@@ -228,6 +233,7 @@ void addsi_setLFO1frequency(addsi *x, float LFO1frequency)
 
 
 /**
+ * @related addsi
  * @brief Sets the strength of the second LFO<br>
  * @param x A pointer to an addsi_tilde object <br>
  * @param LFO2frequency float value setting the strength of the second LFO<br>
