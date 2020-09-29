@@ -1,47 +1,63 @@
+/**
+ * @file addsi.c
+ * @author Marius, Richard, Lenni, Kai <br>
+ * Audiocommunication Group, Technical University Berlin <br>
+ * @brief Implementation of the external's working code <br>
+ * Includes all functions needed to create the additive synthesis of ~addsi
+ */
+
 #include "addsi.h"
 
-addsi *addsi_new(int tableSize)
+/**
+ * @brief Sets up new addsi object on first run and creates wave tables<br>
+ * This function sets up all we need to get started with the processing
+ * @param sampleRate int containing the used sample rate. Note that at this time this is hard coded to 44100 in addsi_pd.c and will not work with differing sample rates<br>
+ * @return An addsi struct <br>
+ */
+addsi *addsi_new(int sampleRate)
 {
+    //allocating memory and setting base value
     addsi *x = (addsi *)malloc(sizeof(addsi));
-    x->tableSize = tableSize;
-    x->lookupTable1 = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
-    x->envelopeTable = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
-    x->LFO1_Table = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
-    x->LFO2_Table = (float *) vas_mem_alloc(x-> tableSize * sizeof(float));
+    x->buffer = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
+    x->envelopeTable = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
+    x->lfo1_table = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
+    x->lfo2_Table = (float *) vas_mem_alloc(x-> sampleRate * sizeof(float));
+    x->sampleRate = sampleRate;
     
-    
-    x->currentIndex = 0;
-    x->basefrequency = 440;
+    // setting base values for sine oscillator
+    x->sine_currentIndex = 0;
+    x->sine_basefrequency = 440;
     x->numberOfHarmonics = MAXNUMBEROFHARMONICS;
-    x->harmmulti = 1;
     
-    x->LFO1frequency = 0.1;
-    x->LFO1_currentIndex = 0;
-    x->LFO1_depth = 1;
+    // setting base values for lfo1
+    x->lfo1_frequency = 0.1;
+    x->lfo1_currentIndex = 0;
+    x->lfo1_depth = 1;
     
-    //Generating Triangle Wavetable for LFO:
-    for(int t = 0; t < tableSize/2; t++)
+    //Generating Triangle Wavetables for LFO1:
+    for(int t = 0; t < sampleRate/2; t++)
     {
-        x->LFO1_Table[t] = 2 * (float) t/ (float) (tableSize/2) - 1;
+        x->lfo1_table[t] = 2 * (float) t/ (float) (sampleRate/2) - 1;
     }
-    for(int t = tableSize/2; t < tableSize; t++)
+    for(int t = sampleRate/2; t < sampleRate; t++)
     {
-        x->LFO1_Table[t] = 1 -
-        (2 * (float) (t-tableSize/2) / (float) (tableSize/2));
+        x->lfo1_table[t] = 1 -
+        (2 * (float) (t-sampleRate/2) / (float) (sampleRate/2));
     }
     
-    x->LFO2frequency = 0.1;
-    x->LFO2_currentIndex = 0;
-    x->LFO2_depth = 2;
+    // setting base values for LFO2
+    x->lfo2_frequency = 0.1;
+    x->lfo2_currentIndex = 0;
+    x->lfo2_depth = 2;
     
     
     //Generating cos Wavetable for LFO2:
-    float stepSizeLFO2 = (M_PI*2) / (float)tableSize;
+    float stepSizeLFO2 = (M_PI*2) / (float)sampleRate;
     float currentXLFO2 = 0;
     
-    for(int i = 0; i < x->tableSize; i++)
+    for(int i = 0; i < x->sampleRate; i++)
     {
-        x->LFO2_Table[i] = cosf(currentXLFO2);
+        x->lfo2_Table[i] = cosf(currentXLFO2);
         
         currentXLFO2 += stepSizeLFO2;
     }
@@ -54,12 +70,12 @@ addsi *addsi_new(int tableSize)
         x->harmonicGain[i] = (float)rand()/RAND_MAX;
     }
        
-    float stepSize = (M_PI*2) / (float)tableSize;
+    float stepSize = (M_PI*2) / (float)sampleRate;
     float currentX = 0;
     
-    for(int i = 0; i < x->tableSize; i++)
+    for(int i = 0; i < x->sampleRate; i++)
     {
-        x->lookupTable1[i] = sinf(currentX);
+        x->buffer[i] = sinf(currentX);
         x->envelopeTable[i] = 1;
         
         currentX += stepSize;
@@ -71,13 +87,11 @@ addsi *addsi_new(int tableSize)
 
 void addsi_free(addsi *x)
 {
-    vas_mem_free(x->lookupTable1);
+    vas_mem_free(x->buffer);
     vas_mem_free(x->envelopeTable);
-    vas_mem_free(x->LFO1_Table);
-    vas_mem_free(x->LFO2_Table);
-    
+    vas_mem_free(x->lfo1_table);
+    vas_mem_free(x->lfo2_Table);
     free(x);
-    
 }
 
 
@@ -98,42 +112,42 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
     {
         
         //LFO1
-        int LFO1_index = floor(x->LFO1_currentIndex);
-        LFOosc =  (1- x->LFO1_depth) + x->LFO1_depth * pow(x->LFO1_Table[LFO1_index],2);
+        int LFO1_index = floor(x->lfo1_currentIndex);
+        LFOosc =  (1- x->lfo1_depth) + x->lfo1_depth * pow(x->lfo1_table[LFO1_index],2);
        
-        x->LFO1_currentIndex += x->LFO1frequency;
+        x->lfo1_currentIndex += x->lfo1_frequency;
         
-        if(x->LFO1_currentIndex >= x->tableSize)
-            x->LFO1_currentIndex -= x->tableSize;
+        if(x->lfo1_currentIndex >= x->sampleRate)
+            x->lfo1_currentIndex -= x->sampleRate;
         
         //LFO2
-        int LFO2_index = floor(x->LFO2_currentIndex);
-        LFO2osc =  (1- x->LFO2_depth) + x->LFO2_depth * pow(x->LFO2_Table[LFO2_index],2);
+        int LFO2_index = floor(x->lfo2_currentIndex);
+        LFO2osc =  (1- x->lfo2_depth) + x->lfo2_depth * pow(x->lfo2_Table[LFO2_index],2);
         
-        x->LFO2_currentIndex += x->LFO2frequency;
+        x->lfo2_currentIndex += x->lfo2_frequency;
         
-        if(x->LFO2_currentIndex >= x->tableSize)
-            x->LFO2_currentIndex -= x->tableSize;
+        if(x->lfo2_currentIndex >= x->sampleRate)
+            x->lfo2_currentIndex -= x->sampleRate;
         
         
         //Sine
-        int intIndex1 = floor(x->currentIndex);
-        buff = x->lookupTable1[intIndex1];
-        x->currentIndex += x->basefrequency;
+        int intIndex1 = floor(x->sine_currentIndex);
+        buff = x->buffer[intIndex1];
+        x->sine_currentIndex += x->sine_basefrequency;
         
-        if(x->currentIndex >= x->tableSize)
-            x->currentIndex -= x->tableSize;
+        if(x->sine_currentIndex >= x->sampleRate)
+            x->sine_currentIndex -= x->sampleRate;
         
         //harmonics
         for(int i = 0; i < MAXNUMBEROFHARMONICS; i++)
         {
-            float harmonicFreq1 = x->basefrequency * (i+1);
+            float harmonicFreq1 = x->sine_basefrequency * (i+1);
             intIndex1 = floor(x->harmonicIndex[i]);
-            buff += x->lookupTable1[intIndex1] * (x->harmonicGain[i] * LFO2osc) ;
+            buff += x->buffer[intIndex1] * (x->harmonicGain[i] * LFO2osc) ;
             x->harmonicIndex[i] += harmonicFreq1;
             
-            if(x->harmonicIndex[i] >= x->tableSize)
-                x->harmonicIndex[i] -= x->tableSize;
+            if(x->harmonicIndex[i] >= x->sampleRate)
+                x->harmonicIndex[i] -= x->sampleRate;
         }
         
         
@@ -142,7 +156,7 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
         
         
         *out *= x->envelopeTable[x->envelopeIndex++];
-        if(x->envelopeIndex >= x->tableSize)
+        if(x->envelopeIndex >= x->sampleRate)
         x->envelopeIndex = 1;
         
         out++;
@@ -169,37 +183,17 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
 void addsi_setbasefrequency(addsi *x, float basefrequency)
 {
     if(basefrequency > 0)
-        x->basefrequency = basefrequency;
+        x->sine_basefrequency = basefrequency;
 }
 
 void addsi_setLFO1frequency(addsi *x, float LFO1frequency)
 {
     if(LFO1frequency > 0)
-        x->LFO1frequency = LFO1frequency;
-}
-
-void addsi_setLFO1depth(addsi *x, float LFO1depth)
-{
-    if(LFO1depth > 0)
-        x->LFO1_depth = LFO1depth;
+        x->lfo1_frequency = LFO1frequency;
 }
 
 void addsi_setLFO2frequency(addsi *x, float LFO2frequency)
 {
     if(LFO2frequency > 0)
-        x->LFO2frequency = LFO2frequency;
+        x->lfo2_frequency = LFO2frequency;
 }
-
-void addsi_setharmmulti(addsi *x, float harmmulti)
-{
-    if(harmmulti > 0)
-        x->harmmulti = harmmulti;
-}
-
-/*
-void addsi_setHarmonics1(addsi *x, float harm1)
-{
-    if(harm1 > 0)
-        x->numberOfHarmonics1 = harm1;
-}
-*/
