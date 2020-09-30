@@ -198,7 +198,7 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
             }
         }
         // normalize all values in the output values by the maximum value
-        for(cc=1; c<size; c++){
+        for(cc=1; cc<size; cc++){
             out[cc] = out[cc] / maximum;
         }
     }
