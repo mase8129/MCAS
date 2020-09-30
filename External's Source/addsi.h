@@ -20,7 +20,7 @@
 #endif
 #define TWOPI (2.0 * M_PI)
     
-#define MAXNUMBEROFHARMONICS 6
+#define MAXNUMBEROFHARMONICS 32
 
 /**
  * @struct addsi
@@ -33,7 +33,7 @@ typedef struct addsi
         float currentIndex; /**< Current working index of the sine oscillator */
         float basefrequency; /**< Working frequency of the sine oscillator*/
         float *lookupTable1; /**< SIne wave table*/
-        float numberOfHarmonics; /**< Number of added harmonics to the baseFrequency*/
+        int numberOfHarmonics; /**< Number of added harmonics to the baseFrequency*/
         float harmonicIndex[MAXNUMBEROFHARMONICS]; /**< Index of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
         float harmonicGain[MAXNUMBEROFHARMONICS]; /**< Gain of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
         float *envelopeTable; /**< Help array for enveloping. Currently this is not used*/
@@ -60,13 +60,9 @@ void addsi_process(addsi *x, float *in, float *out, int vector_size);
 void addsi_setbasefrequency(addsi *x, float basefrequency);
 
 void addsi_setLFO1frequency(addsi *x, float LFO1frequency);
-
-void addsi_setLFO1depth(addsi *x, float LFO1depth);
     
 void addsi_setLFO2frequency(addsi *x, float LFO2frequency);
 
-void addsi_setharmmulti(addsi *x, float harmmulti);
-
-//void addsi_setHarmonics1(addsi *x, float harm1);
+void addsi_setnumberOfHarmonics(addsi *x, float numberOfHarmonics);
 
 #endif /* addsi_h */

@@ -135,6 +135,17 @@ void addsi_tilde_setLFO2frequency(addsi_tilde *x, float LFO2frequency)
     addsi_setLFO2frequency(x->osc, LFO2frequency);
 }
 
+/**
+ * @related addsi_tilde
+ * @brief Wrapper for the number of the partials added to the fundamental frequency <br>
+ * @param x A pointer to an addsi_tilde object <br>
+ * @param numberOfHarmonics float value setting the number of the partials<br>
+ *
+ */
+void addsi_tilde_setnumberOfHarmonics(addsi_tilde *x, float numberOfHarmonics)
+{
+    addsi_setnumberOfHarmonics(x->osc, numberOfHarmonics);
+}
 
 
 /**
@@ -159,6 +170,7 @@ void addsi_tilde_setup(void)
     class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setbasefrequency, gensym("basefrequency"), A_DEFFLOAT, 0);
     class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO1frequency, gensym("LFO1frequency"), A_DEFFLOAT, 0);
     class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO2frequency, gensym("LFO2frequency"), A_DEFFLOAT, 0);
+    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setnumberOfHarmonics, gensym("numberOfHarmonics"), A_DEFFLOAT, 0);
     
     CLASS_MAINSIGNALIN(addsi_tilde_class, addsi_tilde, f);
 }

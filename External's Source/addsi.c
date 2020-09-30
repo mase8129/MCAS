@@ -27,7 +27,7 @@ addsi *addsi_new(int sampleRate)
     // setting base values for sine oscillator
     x->currentIndex = 0;
     x->basefrequency = 440;
-    x->numberOfHarmonics = MAXNUMBEROFHARMONICS;
+    x->numberOfHarmonics = 6;
     
     // setting base values for LFO1
     x->LFO1frequency = 0.1;
@@ -41,14 +41,13 @@ addsi *addsi_new(int sampleRate)
     }
     for(int t = sampleRate/2; t < sampleRate; t++)
     {
-        x->LFO1_Table[t] = 1 -
-        (2 * (float) (t-sampleRate/2) / (float) (sampleRate/2));
+        x->LFO1_Table[t] = 1 - (2 * (float) (t-sampleRate/2) / (float) (sampleRate/2));
     }
     
     // setting base values for LFO2
     x->LFO2frequency = 0.1;
     x->LFO2_currentIndex = 0;
-    x->LFO2_depth = 2;
+    x->LFO2_depth = 1;
     
     
     //Generating cos Wavetable for LFO2:
@@ -64,7 +63,7 @@ addsi *addsi_new(int sampleRate)
     
     
     //Setting HarmonicIndexes and random harmonic amplitudes between 0-1
-    for(int i = 0; i < MAXNUMBEROFHARMONICS; i ++)
+    for(int i = 0; i < MAXNUMBEROFHARMONICS; i++)
     {
         x->harmonicIndex[i] = 0;
         x->harmonicGain[i] = (float)rand()/RAND_MAX;
@@ -156,7 +155,7 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
             x->currentIndex -= x->tableSize;
         
         // Add the LFo2 developed harmonics to the signal
-        for(int i = 0; i < MAXNUMBEROFHARMONICS; i++)
+        for(int i = 0; i < floor(x->numberOfHarmonics); i++)
         {
             float harmonicFreq1 = x->basefrequency * (i+1);
             intIndex1 = floor(x->harmonicIndex[i]);
@@ -169,7 +168,7 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
         
         
         // add some more pure sine wave flavour, so the LFOs are not too present
-        *out +=  buff + 0.3*(buff * LFOosc);
+        *out += LFOosc * buff;
         
         // write out into the envelope table. Currently not used any further.
         *out *= x->envelopeTable[x->envelopeIndex++];
@@ -244,6 +243,20 @@ void addsi_setLFO2frequency(addsi *x, float LFO2frequency)
 {
     if(LFO2frequency >= 0)
         x->LFO2frequency = LFO2frequency;
+}
+
+/**
+ * @related addsi
+ * @brief Sets the number of partials added to the base frequency<br>
+ * @param x A pointer to an addsi_tilde object <br>
+ * @param numberOfHarmonics float value setting the number of partials<br>
+ *
+ */
+
+void addsi_setnumberOfHarmonics(addsi *x, float numberOfHarmonics)
+{
+    if(numberOfHarmonics >= 0)
+        x->numberOfHarmonics = numberOfHarmonics;
 }
 
 
