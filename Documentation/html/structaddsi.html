@@ -106,8 +106,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:a79ca010c0b70a5b34c49c2969cfdd653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a403dc1fdf7e92a0e977cf095989efb9b"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a403dc1fdf7e92a0e977cf095989efb9b">lookupTable1</a></td></tr>
 <tr class="separator:a403dc1fdf7e92a0e977cf095989efb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a6d85c7b8da7bcf13ab45a32360630"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#ad1a6d85c7b8da7bcf13ab45a32360630">numberOfHarmonics</a></td></tr>
-<tr class="separator:ad1a6d85c7b8da7bcf13ab45a32360630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d49cc95e0fee75aae18104263d5073c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a0d49cc95e0fee75aae18104263d5073c">numberOfHarmonics</a></td></tr>
+<tr class="separator:a0d49cc95e0fee75aae18104263d5073c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb391d24efd3275abc6150aa9f753fee"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#afb391d24efd3275abc6150aa9f753fee">harmonicIndex</a> [MAXNUMBEROFHARMONICS]</td></tr>
 <tr class="separator:afb391d24efd3275abc6150aa9f753fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d73236affa699a885deab31e5f61b20"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a0d73236affa699a885deab31e5f61b20">harmonicGain</a> [MAXNUMBEROFHARMONICS]</td></tr>
@@ -161,6 +161,10 @@ Related Functions</h2></td></tr>
 <tr class="memdesc:a846bcf30812aa9f1c2327ea81fcfc443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the strength of the second LFO<br  />
   <a href="structaddsi.html#a846bcf30812aa9f1c2327ea81fcfc443">More...</a><br /></td></tr>
 <tr class="separator:a846bcf30812aa9f1c2327ea81fcfc443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03cbfa8397b86e66a04f86806972b6eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaddsi.html#a03cbfa8397b86e66a04f86806972b6eb">addsi_setnumberOfHarmonics</a> (<a class="el" href="structaddsi.html">addsi</a> *x, float <a class="el" href="structaddsi.html#a0d49cc95e0fee75aae18104263d5073c">numberOfHarmonics</a>)</td></tr>
+<tr class="memdesc:a03cbfa8397b86e66a04f86806972b6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of partials added to the base frequency<br  />
+  <a href="structaddsi.html#a03cbfa8397b86e66a04f86806972b6eb">More...</a><br /></td></tr>
+<tr class="separator:a03cbfa8397b86e66a04f86806972b6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal data structure containing the parameters for the oscillators and buffer data variables <br  />
@@ -447,6 +451,54 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a03cbfa8397b86e66a04f86806972b6eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03cbfa8397b86e66a04f86806972b6eb">&#9670;&nbsp;</a></span>addsi_setnumberOfHarmonics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addsi_setnumberOfHarmonics </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaddsi.html">addsi</a> *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>numberOfHarmonics</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the number of partials added to the base frequency<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A pointer to an <a class="el" href="structaddsi__tilde.html" title="The Pure Data struct of the addsi~ object.">addsi_tilde</a> object <br  />
+ </td></tr>
+    <tr><td class="paramname">numberOfHarmonics</td><td>float value setting the number of partials<br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="a79ca010c0b70a5b34c49c2969cfdd653"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79ca010c0b70a5b34c49c2969cfdd653">&#9670;&nbsp;</a></span>basefrequency</h2>
@@ -673,14 +725,14 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad1a6d85c7b8da7bcf13ab45a32360630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1a6d85c7b8da7bcf13ab45a32360630">&#9670;&nbsp;</a></span>numberOfHarmonics</h2>
+<a id="a0d49cc95e0fee75aae18104263d5073c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d49cc95e0fee75aae18104263d5073c">&#9670;&nbsp;</a></span>numberOfHarmonics</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float numberOfHarmonics</td>
+          <td class="memname">int numberOfHarmonics</td>
         </tr>
       </table>
 </div><div class="memdoc">

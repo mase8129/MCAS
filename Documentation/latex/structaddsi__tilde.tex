@@ -1,0 +1,237 @@
+\hypertarget{structaddsi__tilde}{}\doxysection{addsi\+\_\+tilde Struct Reference}
+\label{structaddsi__tilde}\index{addsi\_tilde@{addsi\_tilde}}
+
+
+The Pure Data struct of the addsi$\sim$ object. ~\newline
+  
+
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct__text}{t\+\_\+object}} \mbox{\hyperlink{structaddsi__tilde_aec9b618f42517cd6740f1d37dba87d0a}{x\+\_\+obj}}
+\item 
+t\+\_\+sample \mbox{\hyperlink{structaddsi__tilde_a3b27de018058e7941a2f36d7a28c2cda}{f}}
+\item 
+\mbox{\hyperlink{structaddsi}{addsi}} $\ast$ \mbox{\hyperlink{structaddsi__tilde_a4e799f19e7943eb56d0ba53262febf53}{osc}}
+\item 
+t\+\_\+outlet $\ast$ \mbox{\hyperlink{structaddsi__tilde_a07b901a5d7d4140b7f701a94bf7f245c}{out}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+t\+\_\+int $\ast$ \mbox{\hyperlink{structaddsi__tilde_a49a43c8620f1a89cef0a71df6911616b}{addsi\+\_\+tilde\+\_\+perform}} (t\+\_\+int $\ast$w)
+\begin{DoxyCompactList}\small\item\em Perform function, mandatory for Pure\+Data. Calculates the output vector~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structaddsi__tilde_a05f6a6c36c9f3b8b5b8e024918a3814c}{addsi\+\_\+tilde\+\_\+dsp}} (\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$x, \mbox{\hyperlink{struct__signal}{t\+\_\+signal}} $\ast$$\ast$sp)
+\begin{DoxyCompactList}\small\item\em D\+SP function mandatory for Pure\+Data. Adds addsi\+\_\+tilde\+\_\+perform to the signal chain. ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structaddsi__tilde_a08150a75089ce62c3438c51a5bc3ff6b}{addsi\+\_\+tilde\+\_\+free}} (\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Memory Management function mandatory for Pure Data. Frees our \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object. ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structaddsi__tilde_a4c2e0b57ce0971af4e346ac8125b4201}\label{structaddsi__tilde_a4c2e0b57ce0971af4e346ac8125b4201}} 
+void $\ast$ \mbox{\hyperlink{structaddsi__tilde_a4c2e0b57ce0971af4e346ac8125b4201}{addsi\+\_\+tilde\+\_\+new}} (t\+\_\+floatarg \mbox{\hyperlink{structaddsi__tilde_a3b27de018058e7941a2f36d7a28c2cda}{f}})
+\begin{DoxyCompactList}\small\item\em Creates new \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object and sets its outlet and sampling rate. note that the externals sampling rate is set at 44100 ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structaddsi__tilde_af5c23e68ed3ff94d2367ccd3a70b699c}{addsi\+\_\+tilde\+\_\+setbasefrequency}} (\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$x, float basefrequency)
+\begin{DoxyCompactList}\small\item\em Wrapper for the base frequency setting of the sine osc~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structaddsi__tilde_a98c1bd6faab1c4429b560442c3dd5308}{addsi\+\_\+tilde\+\_\+set\+L\+F\+O1frequency}} (\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$x, float L\+F\+O1frequency)
+\begin{DoxyCompactList}\small\item\em Wrapper for the strength setting of the first L\+FO~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structaddsi__tilde_a0495e70dcb5bf0d217e6e8c79050e26b}{addsi\+\_\+tilde\+\_\+set\+L\+F\+O2frequency}} (\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$x, float L\+F\+O2frequency)
+\begin{DoxyCompactList}\small\item\em Wrapper of the strength setting of the second L\+FO~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structaddsi__tilde_a7194a14193d226bb1b4749b6a6f0f186}{addsi\+\_\+tilde\+\_\+setnumber\+Of\+Harmonics}} (\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$x, float number\+Of\+Harmonics)
+\begin{DoxyCompactList}\small\item\em Wrapper for the number of the partials added to the fundamental frequency ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structaddsi__tilde_addceefe58fa9a5ac9bf2336eeb6d36c9}\label{structaddsi__tilde_addceefe58fa9a5ac9bf2336eeb6d36c9}} 
+void \mbox{\hyperlink{structaddsi__tilde_addceefe58fa9a5ac9bf2336eeb6d36c9}{addsi\+\_\+tilde\+\_\+setup}} (void)
+\begin{DoxyCompactList}\small\item\em Setup function~\newline
+ This function (or functions called by it) declares the new classes and their properties of the addsi-\/tilde external. It is only called once, when the external is loaded. ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Pure Data struct of the addsi$\sim$ object. ~\newline
+ 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structaddsi__tilde_a05f6a6c36c9f3b8b5b8e024918a3814c}\label{structaddsi__tilde_a05f6a6c36c9f3b8b5b8e024918a3814c}} 
+\index{addsi\_tilde@{addsi\_tilde}!addsi\_tilde\_dsp@{addsi\_tilde\_dsp}}
+\index{addsi\_tilde\_dsp@{addsi\_tilde\_dsp}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{addsi\_tilde\_dsp()}{addsi\_tilde\_dsp()}}
+{\footnotesize\ttfamily void addsi\+\_\+tilde\+\_\+dsp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$}]{x,  }\item[{\mbox{\hyperlink{struct__signal}{t\+\_\+signal}} $\ast$$\ast$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+D\+SP function mandatory for Pure\+Data. Adds addsi\+\_\+tilde\+\_\+perform to the signal chain. ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
+ \\
+\hline
+{\em sp} & A pointer to the input and output vectors ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structaddsi__tilde_a08150a75089ce62c3438c51a5bc3ff6b}\label{structaddsi__tilde_a08150a75089ce62c3438c51a5bc3ff6b}} 
+\index{addsi\_tilde@{addsi\_tilde}!addsi\_tilde\_free@{addsi\_tilde\_free}}
+\index{addsi\_tilde\_free@{addsi\_tilde\_free}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{addsi\_tilde\_free()}{addsi\_tilde\_free()}}
+{\footnotesize\ttfamily void addsi\+\_\+tilde\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Memory Management function mandatory for Pure Data. Frees our \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object. ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structaddsi__tilde_a49a43c8620f1a89cef0a71df6911616b}\label{structaddsi__tilde_a49a43c8620f1a89cef0a71df6911616b}} 
+\index{addsi\_tilde@{addsi\_tilde}!addsi\_tilde\_perform@{addsi\_tilde\_perform}}
+\index{addsi\_tilde\_perform@{addsi\_tilde\_perform}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{addsi\_tilde\_perform()}{addsi\_tilde\_perform()}}
+{\footnotesize\ttfamily t\+\_\+int $\ast$ addsi\+\_\+tilde\+\_\+perform (\begin{DoxyParamCaption}\item[{t\+\_\+int $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Perform function, mandatory for Pure\+Data. Calculates the output vector~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\texttt{ Pure Data Docs }} ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & A pointer to the object, input and output vectors. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the signal chain right behind the \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object. ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structaddsi__tilde_af5c23e68ed3ff94d2367ccd3a70b699c}\label{structaddsi__tilde_af5c23e68ed3ff94d2367ccd3a70b699c}} 
+\index{addsi\_tilde@{addsi\_tilde}!addsi\_tilde\_setbasefrequency@{addsi\_tilde\_setbasefrequency}}
+\index{addsi\_tilde\_setbasefrequency@{addsi\_tilde\_setbasefrequency}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{addsi\_tilde\_setbasefrequency()}{addsi\_tilde\_setbasefrequency()}}
+{\footnotesize\ttfamily void addsi\+\_\+tilde\+\_\+setbasefrequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$}]{x,  }\item[{float}]{basefrequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Wrapper for the base frequency setting of the sine osc~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
+ \\
+\hline
+{\em basefrequency} & float containing the Hz value of the base frequency of the sine osc ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structaddsi__tilde_a98c1bd6faab1c4429b560442c3dd5308}\label{structaddsi__tilde_a98c1bd6faab1c4429b560442c3dd5308}} 
+\index{addsi\_tilde@{addsi\_tilde}!addsi\_tilde\_setLFO1frequency@{addsi\_tilde\_setLFO1frequency}}
+\index{addsi\_tilde\_setLFO1frequency@{addsi\_tilde\_setLFO1frequency}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{addsi\_tilde\_setLFO1frequency()}{addsi\_tilde\_setLFO1frequency()}}
+{\footnotesize\ttfamily void addsi\+\_\+tilde\+\_\+set\+L\+F\+O1frequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$}]{x,  }\item[{float}]{L\+F\+O1frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Wrapper for the strength setting of the first L\+FO~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
+ \\
+\hline
+{\em L\+F\+O1frequency} & float value setting the strength of the first L\+FO~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structaddsi__tilde_a0495e70dcb5bf0d217e6e8c79050e26b}\label{structaddsi__tilde_a0495e70dcb5bf0d217e6e8c79050e26b}} 
+\index{addsi\_tilde@{addsi\_tilde}!addsi\_tilde\_setLFO2frequency@{addsi\_tilde\_setLFO2frequency}}
+\index{addsi\_tilde\_setLFO2frequency@{addsi\_tilde\_setLFO2frequency}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{addsi\_tilde\_setLFO2frequency()}{addsi\_tilde\_setLFO2frequency()}}
+{\footnotesize\ttfamily void addsi\+\_\+tilde\+\_\+set\+L\+F\+O2frequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$}]{x,  }\item[{float}]{L\+F\+O2frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Wrapper of the strength setting of the second L\+FO~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
+ \\
+\hline
+{\em L\+F\+O2frequency} & float value setting the strength of the second L\+FO~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structaddsi__tilde_a7194a14193d226bb1b4749b6a6f0f186}\label{structaddsi__tilde_a7194a14193d226bb1b4749b6a6f0f186}} 
+\index{addsi\_tilde@{addsi\_tilde}!addsi\_tilde\_setnumberOfHarmonics@{addsi\_tilde\_setnumberOfHarmonics}}
+\index{addsi\_tilde\_setnumberOfHarmonics@{addsi\_tilde\_setnumberOfHarmonics}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{addsi\_tilde\_setnumberOfHarmonics()}{addsi\_tilde\_setnumberOfHarmonics()}}
+{\footnotesize\ttfamily void addsi\+\_\+tilde\+\_\+setnumber\+Of\+Harmonics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} $\ast$}]{x,  }\item[{float}]{number\+Of\+Harmonics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Wrapper for the number of the partials added to the fundamental frequency ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
+ \\
+\hline
+{\em number\+Of\+Harmonics} & float value setting the number of the partials~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structaddsi__tilde_a3b27de018058e7941a2f36d7a28c2cda}\label{structaddsi__tilde_a3b27de018058e7941a2f36d7a28c2cda}} 
+\index{addsi\_tilde@{addsi\_tilde}!f@{f}}
+\index{f@{f}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily t\+\_\+sample f}
+
+Also necessary for signal objects, float dummy dataspace for converting a float to signal if no signal is connected (C\+L\+A\+S\+S\+\_\+\+M\+A\+I\+N\+S\+I\+G\+N\+A\+L\+IN) \mbox{\Hypertarget{structaddsi__tilde_a4e799f19e7943eb56d0ba53262febf53}\label{structaddsi__tilde_a4e799f19e7943eb56d0ba53262febf53}} 
+\index{addsi\_tilde@{addsi\_tilde}!osc@{osc}}
+\index{osc@{osc}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{osc}{osc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structaddsi}{addsi}}$\ast$ osc}
+
+custom addsi type containing all signal generating parameters and wavetables \mbox{\Hypertarget{structaddsi__tilde_a07b901a5d7d4140b7f701a94bf7f245c}\label{structaddsi__tilde_a07b901a5d7d4140b7f701a94bf7f245c}} 
+\index{addsi\_tilde@{addsi\_tilde}!out@{out}}
+\index{out@{out}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily t\+\_\+outlet$\ast$ out}
+
+needed to store handles to the outlet of the signal \mbox{\Hypertarget{structaddsi__tilde_aec9b618f42517cd6740f1d37dba87d0a}\label{structaddsi__tilde_aec9b618f42517cd6740f1d37dba87d0a}} 
+\index{addsi\_tilde@{addsi\_tilde}!x\_obj@{x\_obj}}
+\index{x\_obj@{x\_obj}!addsi\_tilde@{addsi\_tilde}}
+\doxysubsubsection{\texorpdfstring{x\_obj}{x\_obj}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__text}{t\+\_\+object}} x\+\_\+obj}
+
+Necessary for every signal object in Pure Data 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+External\textquotesingle{}s Source/\mbox{\hyperlink{addsi__pd_8c}{addsi\+\_\+pd.\+c}}\end{DoxyCompactItemize}

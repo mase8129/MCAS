@@ -6,6 +6,7 @@ var structaddsi =
     [ "addsi_setbasefrequency", "structaddsi.html#a14c4f3db700edafd0b55623e92360709", null ],
     [ "addsi_setLFO1frequency", "structaddsi.html#a97698cef413ff568248ae1287241bb5a", null ],
     [ "addsi_setLFO2frequency", "structaddsi.html#a846bcf30812aa9f1c2327ea81fcfc443", null ],
+    [ "addsi_setnumberOfHarmonics", "structaddsi.html#a03cbfa8397b86e66a04f86806972b6eb", null ],
     [ "basefrequency", "structaddsi.html#a79ca010c0b70a5b34c49c2969cfdd653", null ],
     [ "currentIndex", "structaddsi.html#abd40131d012c1d7f6ad152072856a85d", null ],
     [ "envelopeIndex", "structaddsi.html#acb88db8b5268ae7f9802d01dcb85725e", null ],
@@ -21,6 +22,6 @@ var structaddsi =
     [ "LFO2_Table", "structaddsi.html#ab79fed73591643ea16ede621a029b1bd", null ],
     [ "LFO2frequency", "structaddsi.html#a10e8fb95819ffa362cda5529d008b427", null ],
     [ "lookupTable1", "structaddsi.html#a403dc1fdf7e92a0e977cf095989efb9b", null ],
-    [ "numberOfHarmonics", "structaddsi.html#ad1a6d85c7b8da7bcf13ab45a32360630", null ],
+    [ "numberOfHarmonics", "structaddsi.html#a0d49cc95e0fee75aae18104263d5073c", null ],
     [ "tableSize", "structaddsi.html#a6ad1e8d3cf9f2f916f919948e24d7b38", null ]
 ];
