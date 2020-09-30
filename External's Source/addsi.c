@@ -215,7 +215,7 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
  */
 void addsi_setbasefrequency(addsi *x, float basefrequency)
 {
-    if(basefrequency > 0)
+    if(basefrequency >= 0)
         x->basefrequency = basefrequency;
 }
 
@@ -228,7 +228,7 @@ void addsi_setbasefrequency(addsi *x, float basefrequency)
  */
 void addsi_setLFO1frequency(addsi *x, float LFO1frequency)
 {
-    if(LFO1frequency > 0)
+    if(LFO1frequency >= 0)
         x->LFO1frequency = LFO1frequency;
 }
 
@@ -242,7 +242,7 @@ void addsi_setLFO1frequency(addsi *x, float LFO1frequency)
  */
 void addsi_setLFO2frequency(addsi *x, float LFO2frequency)
 {
-    if(LFO2frequency > 0)
+    if(LFO2frequency >= 0)
         x->LFO2frequency = LFO2frequency;
 }
 
