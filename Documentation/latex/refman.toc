@@ -1,0 +1,74 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Motion Controlled Additive Synthesis}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Where to start?}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Requirements}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Using addsi$\sim $ with Pd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Party}{1}{subsection.1.1.2}%
+\contentsline {chapter}{\numberline {2}Data Structure Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Data Structures}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Data Structure Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}atom Struct Reference}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gobj Struct Reference}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gpointer Struct Reference}{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gstub Struct Reference}{8}{section.4.4}%
+\contentsline {section}{\numberline {4.5}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}resample Struct Reference}{8}{section.4.5}%
+\contentsline {section}{\numberline {4.6}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}scalar Struct Reference}{8}{section.4.6}%
+\contentsline {section}{\numberline {4.7}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}signal Struct Reference}{9}{section.4.7}%
+\contentsline {section}{\numberline {4.8}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}symbol Struct Reference}{9}{section.4.8}%
+\contentsline {section}{\numberline {4.9}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}text Struct Reference}{9}{section.4.9}%
+\contentsline {section}{\numberline {4.10}addsi Struct Reference}{10}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{11}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Friends And Related Function Documentation}{11}{subsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.1}addsi\_free()}{11}{subsubsection.4.10.2.1}%
+\contentsline {subsubsection}{\numberline {4.10.2.2}addsi\_new()}{11}{subsubsection.4.10.2.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.3}addsi\_process()}{11}{subsubsection.4.10.2.3}%
+\contentsline {subsubsection}{\numberline {4.10.2.4}addsi\_setbasefrequency()}{12}{subsubsection.4.10.2.4}%
+\contentsline {subsubsection}{\numberline {4.10.2.5}addsi\_setLFO1frequency()}{12}{subsubsection.4.10.2.5}%
+\contentsline {subsubsection}{\numberline {4.10.2.6}addsi\_setLFO2frequency()}{13}{subsubsection.4.10.2.6}%
+\contentsline {subsubsection}{\numberline {4.10.2.7}addsi\_setnumberOfHarmonics()}{13}{subsubsection.4.10.2.7}%
+\contentsline {subsection}{\numberline {4.10.3}Field Documentation}{13}{subsection.4.10.3}%
+\contentsline {subsubsection}{\numberline {4.10.3.1}basefrequency}{14}{subsubsection.4.10.3.1}%
+\contentsline {subsubsection}{\numberline {4.10.3.2}currentIndex}{14}{subsubsection.4.10.3.2}%
+\contentsline {subsubsection}{\numberline {4.10.3.3}envelopeIndex}{14}{subsubsection.4.10.3.3}%
+\contentsline {subsubsection}{\numberline {4.10.3.4}envelopeTable}{14}{subsubsection.4.10.3.4}%
+\contentsline {subsubsection}{\numberline {4.10.3.5}harmonicGain}{14}{subsubsection.4.10.3.5}%
+\contentsline {subsubsection}{\numberline {4.10.3.6}harmonicIndex}{14}{subsubsection.4.10.3.6}%
+\contentsline {subsubsection}{\numberline {4.10.3.7}LFO1\_currentIndex}{14}{subsubsection.4.10.3.7}%
+\contentsline {subsubsection}{\numberline {4.10.3.8}LFO1\_depth}{14}{subsubsection.4.10.3.8}%
+\contentsline {subsubsection}{\numberline {4.10.3.9}LFO1\_Table}{15}{subsubsection.4.10.3.9}%
+\contentsline {subsubsection}{\numberline {4.10.3.10}LFO1frequency}{15}{subsubsection.4.10.3.10}%
+\contentsline {subsubsection}{\numberline {4.10.3.11}LFO2\_currentIndex}{15}{subsubsection.4.10.3.11}%
+\contentsline {subsubsection}{\numberline {4.10.3.12}LFO2\_depth}{15}{subsubsection.4.10.3.12}%
+\contentsline {subsubsection}{\numberline {4.10.3.13}LFO2\_Table}{15}{subsubsection.4.10.3.13}%
+\contentsline {subsubsection}{\numberline {4.10.3.14}LFO2frequency}{15}{subsubsection.4.10.3.14}%
+\contentsline {subsubsection}{\numberline {4.10.3.15}lookupTable1}{15}{subsubsection.4.10.3.15}%
+\contentsline {subsubsection}{\numberline {4.10.3.16}numberOfHarmonics}{15}{subsubsection.4.10.3.16}%
+\contentsline {subsubsection}{\numberline {4.10.3.17}tableSize}{16}{subsubsection.4.10.3.17}%
+\contentsline {section}{\numberline {4.11}addsi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tilde Struct Reference}{16}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{17}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Friends And Related Function Documentation}{17}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}addsi\_tilde\_dsp()}{17}{subsubsection.4.11.2.1}%
+\contentsline {subsubsection}{\numberline {4.11.2.2}addsi\_tilde\_free()}{17}{subsubsection.4.11.2.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.3}addsi\_tilde\_perform()}{18}{subsubsection.4.11.2.3}%
+\contentsline {subsubsection}{\numberline {4.11.2.4}addsi\_tilde\_setbasefrequency()}{18}{subsubsection.4.11.2.4}%
+\contentsline {subsubsection}{\numberline {4.11.2.5}addsi\_tilde\_setLFO1frequency()}{18}{subsubsection.4.11.2.5}%
+\contentsline {subsubsection}{\numberline {4.11.2.6}addsi\_tilde\_setLFO2frequency()}{19}{subsubsection.4.11.2.6}%
+\contentsline {subsubsection}{\numberline {4.11.2.7}addsi\_tilde\_setnumberOfHarmonics()}{19}{subsubsection.4.11.2.7}%
+\contentsline {subsection}{\numberline {4.11.3}Field Documentation}{20}{subsection.4.11.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.1}f}{20}{subsubsection.4.11.3.1}%
+\contentsline {subsubsection}{\numberline {4.11.3.2}osc}{20}{subsubsection.4.11.3.2}%
+\contentsline {subsubsection}{\numberline {4.11.3.3}out}{20}{subsubsection.4.11.3.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.4}x\_obj}{20}{subsubsection.4.11.3.4}%
+\contentsline {section}{\numberline {4.12}word Union Reference}{20}{section.4.12}%
+\contentsline {chapter}{\numberline {5}File Documentation}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}External\textquotesingle {}s Source/addsi.c File Reference}{21}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{21}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}External\textquotesingle {}s Source/addsi.h File Reference}{21}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{22}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}External\textquotesingle {}s Source/addsi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pd.c File Reference}{22}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{22}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Needed other C Files/vas\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mem.h File Reference}{23}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{23}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}Needed other C Files/vas\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.h File Reference}{23}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{23}{subsection.5.5.1}%
