@@ -123,19 +123,12 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
     float LFOosc;
     float LFO2osc;
 
-    // help veriables for normalizing
-    int c, cc;
-    // temporary variable for storing the maximum value of the output vector
-    float maximum;
-    
-    // Calculate size of the float array
-    int(size) = sizeof(&out) / sizeof(float);
     
     // start the processing using a while loop counting down to the beginning of the output vector
     while(i--)
     {
         
-        //LFO1: adjust the LFO2 wave table by the set LFO strength
+        //LFO1: adjust the LFO1 wave table by the set LFO strength
         int LFO1_index = floor(x->LFO1_currentIndex);
         LFOosc =  (1- x->LFO1_depth) + x->LFO1_depth * pow(x->LFO1_Table[LFO1_index],2);
        
@@ -185,23 +178,31 @@ void addsi_process(addsi *x, float *in, float *out, int vectorSize)
         
         //increment the output vector array pointer by one, to iterate through all values during the while loop
         out++;
-     
-        // Normalize the output vector
+    }
+    
+    // Normalize the output vector
+    // help counter veriables
+    int k, cc;
+    // temporary variable for storing the maximum value of the output vector
+    float maximum;
         
-        // set the first maximum
-        maximum = out[0];
-
-        // search for the maximum value in the output vector and temporary store it
-        for(c=1; c < size;c++){
-            if(out[c] > maximum){
-                maximum = out[c];
-            }
-        }
-        // normalize all values in the output values by the maximum value
-        for(cc=1; cc<size; cc++){
-            out[cc] = out[cc] / maximum;
+    // Calculate size of the float array
+    int(size) = sizeof(&out) / sizeof(float);
+        
+    // set the first maximum
+    maximum = out[0];
+    
+    // search for the maximum value in the output vector and temporary store it
+    for(k=1; k < size; k++){
+        if(out[k] > maximum){
+            maximum = out[k];
         }
     }
+    // normalize all values in the output values by the maximum value
+    for(cc=1; cc<=size; cc++){
+        out[cc] = out[cc] / maximum;
+    }
+    
 }
 
 
