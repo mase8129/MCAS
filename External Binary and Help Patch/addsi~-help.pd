@@ -1,31 +1,41 @@
-#N canvas 480 23 758 637 12;
-#X obj 25 16 addsi~;
-#X obj 230 339 addsi~;
-#X obj 216 428 dac~;
-#X msg 65 227 basefrequency 100, f 8;
-#X msg 339 228 LFO2frequency 20, f 17;
-#X msg 167 232 LFO1frequency 4, f 17;
-#X text 104 17 - additive sine wave synthesis with harmonics and 2
-LFOs;
-#X text 27 59 The addsi~ objects outputs a developed cosine wave with
-6 harmonics of random values added to it. The signal is further developed
-with 2 low frequency oscillators. LFO1 modulates the amplitude of the
-cosine base frequency. LFO2 modulates the amplitudes of its harmonics
-;
-#X obj 234 384 *~;
-#X obj 427 374 line~;
-#X obj 430 311 hsl 128 15 0 1 0 0 empty empty volume 135 6 0 10 -262144
--1 -1 3600 1;
-#X text 69 171 addsi~ takes messages containing pairs of parameter-name
+#N canvas 198 139 647 730 12;
+#X obj 34 43 addsi~;
+#X obj 232 433 addsi~;
+#X obj 232 537 dac~;
+#X obj 232 492 *~;
+#X obj 326 464 line~;
+#X obj 329 439 hsl 128 15 0 1 0 0 empty empty volume 135 6 0 10 -262144
+-1 -1 0 1;
+#X text 78 198 addsi~ takes messages containing pairs of parameter-name
 and float value in Hz;
-#X text 86 556 It is reccomended to pair this patch with an example
+#X text 38 584 It is reccomended to pair this patch with an example
 patch for creating a phone controlled sound experience using Pdparty.
 Find out more here: https://github.com/mase8129/MCAS;
-#X connect 1 0 8 0;
-#X connect 3 0 1 0;
-#X connect 4 0 1 0;
-#X connect 5 0 1 0;
-#X connect 8 0 2 0;
-#X connect 8 0 2 1;
-#X connect 9 0 8 1;
-#X connect 10 0 9 0;
+#X msg 359 308 LFO1frequency \$1, f 17;
+#X msg 359 389 LFO2frequency \$1, f 17;
+#X floatatom 359 278 5 0 0 1 amplitude_modulation - -;
+#X floatatom 359 360 5 0 0 1 overtones_amplitude_modulation - -;
+#X msg 44 308 basefrequency \$1;
+#X floatatom 44 278 5 0 0 1 frequency - -;
+#X msg 183 308 numberOfHarmonics \$1;
+#X floatatom 183 279 5 0 0 1 number_of_overtones - -;
+#X text 36 86 The addsi~ objects outputs a developed cosine wave with
+up to 32 overtones with random amplitudes. The signal can be modulated
+in amplitude with 2 low frequency oscillators. LFO1 modulates the amplitude
+of the cosine base frequency. LFO2 modulates the amplitudes of its
+harmonics.;
+#X text 113 44 - additive sine wave synthesis with up to 32 harmonics
+and 2 LFOs (AM), f 70;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 0;
+#X connect 12 0 1 0;
+#X connect 13 0 12 0;
+#X connect 14 0 1 0;
+#X connect 15 0 14 0;
