@@ -1,11 +1,12 @@
-#N canvas 603 23 584 653 10;
-#X obj 11 203 cnv 15 340 100 empty empty Gyroscope 20 12 0 18 -233017
+#N canvas 862 297 362 529 10;
+#X obj 11 79 cnv 15 340 100 empty empty Gyroscope 20 12 0 18 -233017
 -66577 0;
-#X floatatom 33 251 10 0 0 1 x gx -;
-#X floatatom 139 252 10 0 0 1 y gy -;
-#X floatatom 248 252 10 0 0 1 z gz -;
-#X obj 11 145 tgl 30 0 rungyro empty run 7 15 0 10 -262144 -1 -1 0
-1;
+#X floatatom 33 127 10 0 0 1 x gx -;
+#X floatatom 139 128 10 0 0 1 y gy -;
+#X floatatom 248 128 10 0 0 1 z gz -;
+#X obj 11 21 tgl 30 0 rungyro empty run 7 15 0 10 -262144 -1 -1 0 1
+;
+#X text 49 29 turn on by sending a msg to #pdparty: gyro 1;
 #N canvas 868 185 544 269 guts 0;
 #X obj 40 58 unpack f f f;
 #X obj 40 28 r #gyro;
@@ -21,7 +22,6 @@
 #X obj 266 28 r updates;
 #X msg 266 59 gyro updates \$1;
 #X msg 382 60 gyro;
-#X msg 166 186 gyro speed normal;
 #X obj 369 138 r octaves-out;
 #X obj 304 194 oscparse;
 #X obj 303 235 print;
@@ -31,6 +31,7 @@
 #X msg 39 196 \; updates-in set 1 \; octaves-in set 1 \;;
 #X obj 175 109 tgl 40 0 updates updates-in volume_control -20 50 0
 10 -228856 -1 -1 1 1;
+#X msg 166 186 gyro speed slow;
 #X connect 0 0 2 0;
 #X connect 0 1 3 0;
 #X connect 0 2 4 0;
@@ -38,30 +39,30 @@
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 8 0 13 0;
-#X connect 9 0 21 0;
-#X connect 9 0 14 0;
+#X connect 9 0 20 0;
+#X connect 9 0 22 0;
 #X connect 11 0 12 0;
 #X connect 12 0 7 0;
 #X connect 13 0 7 0;
-#X connect 14 0 10 0;
-#X connect 15 0 20 0;
-#X connect 16 0 19 0;
+#X connect 14 0 19 0;
+#X connect 15 0 18 0;
+#X connect 18 0 16 0;
 #X connect 19 0 17 0;
-#X connect 20 0 18 0;
-#X connect 20 0 16 0;
+#X connect 19 0 15 0;
+#X connect 22 0 10 0;
 #X coords 0 0 1 1 85 60 0;
-#X restore 301 209 pd guts;
-#X text 9 181 gyroscope rotation radians/s;
-#X obj 11 516 cnv 15 340 100 empty empty Transpose 20 12 0 18 -233017
+#X restore 301 85 pd guts;
+#X text 9 57 gyroscope rotation radians/s;
+#X obj 11 392 cnv 15 340 100 empty empty Harmonics 20 12 0 18 -233017
 -66577 0;
-#X obj 34 549 hradio 42 1 0 7 octaves-out octaves-in empty 132 50 0
+#X obj 34 425 hradio 42 1 0 7 octaves-out octaves-in empty 132 50 0
 10 -228856 -1 -1 1;
-#X obj 11 373 cnv 15 340 100 empty empty Accelerometer 20 12 0 18 -233017
+#X obj 11 249 cnv 15 340 100 empty empty Accelerometer 20 12 0 18 -233017
 -66577 0;
-#X floatatom 33 422 10 0 0 1 x ax -;
-#X floatatom 139 423 10 0 0 1 y ay -;
-#X floatatom 249 423 10 0 0 1 z az -;
-#X text 9 353 accelerometer Gs;
+#X floatatom 33 298 10 0 0 1 x ax -;
+#X floatatom 139 299 10 0 0 1 y ay -;
+#X floatatom 249 299 10 0 0 1 z az -;
+#X text 9 229 accelerometer Gs;
 #N canvas 612 398 364 170 guts 0;
 #X obj 40 58 unpack f f f;
 #X obj 74 87 s ay;
@@ -72,7 +73,7 @@
 #X obj 173 27 r runaccel;
 #X msg 173 58 accelerate \$1;
 #X obj 173 137 s #pdparty;
-#X msg 180 111 accelerate speed normal;
+#X msg 180 111 accelerate speed slow;
 #X connect 0 0 3 0;
 #X connect 0 1 1 0;
 #X connect 0 2 2 0;
@@ -81,9 +82,8 @@
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 9 0 8 0;
-#X restore 302 378 pd guts;
-#X obj 11 316 tgl 30 0 runaccel empty run 7 15 0 10 -262144 -1 -1 0
+#X restore 302 254 pd guts;
+#X obj 11 192 tgl 30 0 runaccel empty run 7 15 0 10 -262144 -1 -1 0
 1;
-#X text 49 153 tap to send gyroscope data via OSC;
-#X text 49 324 tap to send accelerometer data via OSC;
-#X coords 0 653 1 652 85 60 0;
+#X text 49 200 turn on by sending a msg to #pdparty: accelerate 1;
+#X coords 0 529 1 528 85 60 0;
