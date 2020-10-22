@@ -164,11 +164,11 @@ void addsi_tilde_setup(void)
 
       class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_dsp, gensym("dsp"), 0);
 
-      // this adds the messages to our object
+      // this adds the messages to the addsi~ object
       class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setFrequency, gensym("frequency"), A_DEFFLOAT, 0);
       class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO1frequency, gensym("LFO1frequency"), A_DEFFLOAT, 0);
-    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO2frequency, gensym("LFO2frequency"), A_DEFFLOAT, 0);
-    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setHarmonics, gensym("harmonics"), A_DEFFLOAT, 0);
+      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO2frequency, gensym("LFO2frequency"), A_DEFFLOAT, 0);
+      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setHarmonics, gensym("harmonics"), A_DEFFLOAT, 0);
 
       CLASS_MAINSIGNALIN(addsi_tilde_class, addsi_tilde, f);
 }

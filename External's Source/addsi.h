@@ -24,7 +24,7 @@ extern "C" {
 #endif
 
 #ifndef MAXNUMBEROFHARMONICS
-#define MAXNUMBEROFHARMONICS (16)
+#define MAXNUMBEROFHARMONICS (100)
 #endif
     
 /**
@@ -41,8 +41,6 @@ typedef struct addsi
     int numberOfHarmonics;/**< Number of added harmonics to the baseFrequency*/
     float harmonicIndex[MAXNUMBEROFHARMONICS];/**< Index of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
     float harmonicGain[MAXNUMBEROFHARMONICS];/**< Gain of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
-    float *envelopeTable;/**< Help array for enveloping. Currently this is not used*/
-    int envelopeIndex;/**< Current working index in envelopeTable. Currently this is not used*/
     float *LFO1_Table;/**< Working array of the first LFO */
     float LFO1frequency;/**<  Working frequency of the first LFO*/
     int LFO1_depth;/**< Depth of the first LFO */

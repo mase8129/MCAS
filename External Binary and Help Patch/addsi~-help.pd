@@ -1,42 +1,75 @@
-#N canvas 581 177 646 789 12;
-#X obj 214 396 addsi~;
-#X obj 214 500 dac~;
-#X text 78 178 addsi~ takes messages containing pairs of parameter-name
-and float value in Hz;
-#X text 31 689 It is reccomended to pair this patch with an example
+#N canvas 581 177 602 778 12;
+#X obj 118 463 dac~;
+#X text 78 157 addsi~ takes messages containing pairs of parameter-name
+and float value in Hz, f 56;
+#X text 31 691 It is reccomended to pair this patch with an example
 patch for creating a phone controlled sound experience using Pdparty.
-Find out more here: https://github.com/mase8129/MCAS;
-#X msg 351 274 LFO1frequency \$1, f 17;
-#X msg 352 352 LFO2frequency \$1, f 17;
-#X floatatom 351 244 5 0 0 1 amplitude_modulation - -;
-#X floatatom 352 323 5 0 0 1 amplitude_modulation_(harmonics) - -;
-#X floatatom 43 243 5 0 0 1 fundamental - -;
-#X msg 43 273 frequency \$1;
-#X obj 146 476 env~;
-#X obj 146 500 - 100;
-#X obj 147 527 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X floatatom 171 243 5 0 16 1 number_of_harmonics - -;
-#X obj 41 48 addsi~;
-#X msg 171 273 harmonics \$1;
-#X text 108 48 - additive sine wave synthesis with up to 16 harmonics
-and 2 LFOs (AM), f 70;
-#X text 36 86 The addsi~ objects outputs a developed cosine wave with
-up to 16 overtones with random amplitudes. The signal can be modulated
-in amplitude with 2 low frequency oscillators. LFO1 modulates the amplitude
-of the cosine base frequency. LFO2 modulates all amplitudes of the
-harmonics.;
-#X obj 214 442 *~ 0.8;
-#X connect 0 0 18 0;
-#X connect 4 0 0 0;
-#X connect 5 0 0 0;
-#X connect 6 0 4 0;
-#X connect 7 0 5 0;
+Find out more here: https://github.com/mase8129/MCAS, f 61;
+#X msg 292 246 LFO1frequency \$1, f 17;
+#X floatatom 292 216 5 0 0 1 amplitude_modulation - -;
+#X floatatom 43 216 5 0 0 1 fundamental - -;
+#X msg 43 245 frequency \$1;
+#X obj 50 463 env~;
+#X obj 50 488 - 100;
+#X obj 51 530 vu 15 120 empty empty -1 -8 0 10 -262144 -1 1 0;
+#X floatatom 171 216 5 0 100 1 overtones - -;
+#X obj 40 36 addsi~;
+#X msg 171 246 harmonics \$1;
+#X obj 118 424 *~ 0.8;
+#X obj 118 395 addsi~;
+#X text 108 36 - additive sine wave synthesis with up to 100 harmonics
+and 2 LFOs, f 66;
+#X obj 205 495 cnv 15 300 160 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array add 1640 float 4;
+#X coords 0 1 1639 -1 266 120 1 0 0;
+#X restore 223 516 graph;
+#N canvas 0 23 175 134 add 0;
+#X obj 37 35 loadbang;
+#X obj 24 11 inlet~;
+#X obj 37 86 tabwrite~ add;
+#X obj 37 60 metro 90;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X restore 205 463 pd add;
+#X floatatom 292 292 5 0 0 1 amplitude_modulation_harmonics - -;
+#X msg 292 322 LFO2frequency \$1, f 17;
+#N canvas 0 23 558 127 init 0;
+#X msg 31 54 frequency 100;
+#X obj 31 93 outlet;
+#X obj 31 16 loadbang;
+#X msg 152 54 harmonics 9;
+#X msg 257 54 LFO1frequency 0.1;
+#X msg 403 54 LFO2frequency 0.38;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X restore 292 345 pd init;
+#X text 36 74 The addsi~ objects outputs a developed cosine wave with
+up to 100 overtones with random amplitudes at initialisation. The signal
+can be modulated in amplitude with 2 low frequency oscillators. LFO1
+modulates the amplitude of the cosine base frequency. LFO2 modulates
+all amplitudes of the overtones., f 76;
+#X connect 3 0 14 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 14 0;
+#X connect 7 0 8 0;
 #X connect 8 0 9 0;
-#X connect 9 0 0 0;
-#X connect 10 0 11 0;
-#X connect 11 0 12 0;
-#X connect 13 0 15 0;
-#X connect 15 0 0 0;
-#X connect 18 0 1 0;
-#X connect 18 0 1 1;
-#X connect 18 0 10 0;
+#X connect 10 0 12 0;
+#X connect 12 0 14 0;
+#X connect 13 0 0 0;
+#X connect 13 0 0 1;
+#X connect 13 0 7 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 19 0 20 0;
+#X connect 20 0 14 0;
+#X connect 21 0 14 0;
