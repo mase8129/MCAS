@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['harmonicgain_93',['harmonicGain',['../structaddsi.html#a0d73236affa699a885deab31e5f61b20',1,'addsi']]],
-  ['harmonicindex_94',['harmonicIndex',['../structaddsi.html#afb391d24efd3275abc6150aa9f753fee',1,'addsi']]]
+  ['numberofharmonics_75',['numberOfHarmonics',['../structaddsi.html#a0d49cc95e0fee75aae18104263d5073c',1,'addsi']]]
 ];

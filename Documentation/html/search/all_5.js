@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['f_34',['f',['../structaddsi__tilde.html#a3b27de018058e7941a2f36d7a28c2cda',1,'addsi_tilde']]]
+  ['numberofharmonics_35',['numberOfHarmonics',['../structaddsi.html#a0d49cc95e0fee75aae18104263d5073c',1,'addsi']]]
 ];

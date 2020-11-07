@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numberofharmonics_104',['numberOfHarmonics',['../structaddsi.html#a0d49cc95e0fee75aae18104263d5073c',1,'addsi']]]
+  ['tablesize_78',['tableSize',['../structaddsi.html#a6ad1e8d3cf9f2f916f919948e24d7b38',1,'addsi']]]
 ];

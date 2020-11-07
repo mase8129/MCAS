@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basefrequency_88',['basefrequency',['../structaddsi.html#a79ca010c0b70a5b34c49c2969cfdd653',1,'addsi']]]
+  ['currentindex_61',['currentIndex',['../structaddsi.html#abd40131d012c1d7f6ad152072856a85d',1,'addsi']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['currentindex_89',['currentIndex',['../structaddsi.html#abd40131d012c1d7f6ad152072856a85d',1,'addsi']]]
+  ['f_62',['f',['../structaddsi__tilde.html#a3b27de018058e7941a2f36d7a28c2cda',1,'addsi_tilde']]],
+  ['frequency_63',['frequency',['../structaddsi.html#acdfc8898c9e67fbcec81f3b04ae61bd9',1,'addsi']]]
 ];

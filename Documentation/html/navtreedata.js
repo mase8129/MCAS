@@ -25,12 +25,6 @@
 var NAVTREE =
 [
   [ "Motion Controlled Additive Synthesis", "index.html", [
-    [ "Motion Controlled Additive Synthesis", "md__r_e_a_d_m_e.html", [
-      [ "Where to start?", "md__r_e_a_d_m_e.html#autotoc_md1", [
-        [ "Requirements", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-        [ "Using addsi~ with PdParty", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
-      ] ]
-    ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],

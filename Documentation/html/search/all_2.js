@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['basefrequency_30',['basefrequency',['../structaddsi.html#a79ca010c0b70a5b34c49c2969cfdd653',1,'addsi']]]
+  ['f_22',['f',['../structaddsi__tilde.html#a3b27de018058e7941a2f36d7a28c2cda',1,'addsi_tilde']]],
+  ['frequency_23',['frequency',['../structaddsi.html#acdfc8898c9e67fbcec81f3b04ae61bd9',1,'addsi']]]
 ];

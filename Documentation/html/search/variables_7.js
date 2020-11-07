@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['osc_105',['osc',['../structaddsi__tilde.html#a4e799f19e7943eb56d0ba53262febf53',1,'addsi_tilde']]],
-  ['out_106',['out',['../structaddsi__tilde.html#a07b901a5d7d4140b7f701a94bf7f245c',1,'addsi_tilde']]]
+  ['x_5fobj_79',['x_obj',['../structaddsi__tilde.html#aec9b618f42517cd6740f1d37dba87d0a',1,'addsi_tilde']]]
 ];

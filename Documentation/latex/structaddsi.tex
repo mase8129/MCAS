@@ -17,9 +17,9 @@ int \mbox{\hyperlink{structaddsi_a6ad1e8d3cf9f2f916f919948e24d7b38}{table\+Size}
 \item 
 float \mbox{\hyperlink{structaddsi_abd40131d012c1d7f6ad152072856a85d}{current\+Index}}
 \item 
-float \mbox{\hyperlink{structaddsi_a79ca010c0b70a5b34c49c2969cfdd653}{basefrequency}}
+float \mbox{\hyperlink{structaddsi_acdfc8898c9e67fbcec81f3b04ae61bd9}{frequency}}
 \item 
-float $\ast$ \mbox{\hyperlink{structaddsi_a403dc1fdf7e92a0e977cf095989efb9b}{lookup\+Table1}}
+float $\ast$ \mbox{\hyperlink{structaddsi_a4c0ef6e62abb50c12f166caa44696d9d}{lookup\+Table}}
 \item 
 int \mbox{\hyperlink{structaddsi_a0d49cc95e0fee75aae18104263d5073c}{number\+Of\+Harmonics}}
 \item 
@@ -27,15 +27,11 @@ float \mbox{\hyperlink{structaddsi_afb391d24efd3275abc6150aa9f753fee}{harmonic\+
 \item 
 float \mbox{\hyperlink{structaddsi_a0d73236affa699a885deab31e5f61b20}{harmonic\+Gain}} \mbox{[}M\+A\+X\+N\+U\+M\+B\+E\+R\+O\+F\+H\+A\+R\+M\+O\+N\+I\+CS\mbox{]}
 \item 
-float $\ast$ \mbox{\hyperlink{structaddsi_a18d9552b00028f65d7e930bab7e41abe}{envelope\+Table}}
-\item 
-int \mbox{\hyperlink{structaddsi_acb88db8b5268ae7f9802d01dcb85725e}{envelope\+Index}}
-\item 
 float $\ast$ \mbox{\hyperlink{structaddsi_a7cb3662ff929b2c505458143158d5648}{L\+F\+O1\+\_\+\+Table}}
 \item 
 float \mbox{\hyperlink{structaddsi_a6d9c3391c6b806109d92b8302341d5ab}{L\+F\+O1frequency}}
 \item 
-float \mbox{\hyperlink{structaddsi_ad8daf709533685590ef0d6f8692fe865}{L\+F\+O1\+\_\+depth}}
+int \mbox{\hyperlink{structaddsi_ad2208586fec057367ba705d92f83ca03}{L\+F\+O1\+\_\+depth}}
 \item 
 float \mbox{\hyperlink{structaddsi_a411e7e3bae99a4e8baa9c3fd763a0e31}{L\+F\+O1\+\_\+current\+Index}}
 \item 
@@ -43,32 +39,32 @@ float $\ast$ \mbox{\hyperlink{structaddsi_ab79fed73591643ea16ede621a029b1bd}{L\+
 \item 
 float \mbox{\hyperlink{structaddsi_a10e8fb95819ffa362cda5529d008b427}{L\+F\+O2frequency}}
 \item 
-float \mbox{\hyperlink{structaddsi_a9c0692a02ea387a66aae3f6cf31dd451}{L\+F\+O2\+\_\+depth}}
+int \mbox{\hyperlink{structaddsi_ae7b041443c35bcd91991fa032a65b470}{L\+F\+O2\+\_\+depth}}
 \item 
 float \mbox{\hyperlink{structaddsi_a1f13be2e30e9d6a63278b2881f40100e}{L\+F\+O2\+\_\+current\+Index}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Related Functions}
 (Note that these are not member functions.) \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structaddsi}{addsi}} $\ast$ \mbox{\hyperlink{structaddsi_a07b45b069efcbaefd3061e53520210ba}{addsi\+\_\+new}} (int sample\+Rate)
+\mbox{\hyperlink{structaddsi}{addsi}} $\ast$ \mbox{\hyperlink{structaddsi_ae5828e2f2ef6904ca9609f91c6961532}{addsi\+\_\+new}} (int \mbox{\hyperlink{structaddsi_a6ad1e8d3cf9f2f916f919948e24d7b38}{table\+Size}})
 \begin{DoxyCompactList}\small\item\em Sets up new addsi object on first run and creates wave tables~\newline
  This function sets up all we need to get started with processing. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structaddsi_ad240d3c54471ef024010c289fcb5f8e3}{addsi\+\_\+free}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x)
 \begin{DoxyCompactList}\small\item\em Frees the memory~\newline
  Implements mandatory memory management function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structaddsi_accd8c84d1e98bed24fc3f77df7d799b5}{addsi\+\_\+process}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x, float $\ast$in, float $\ast$out, int vector\+Size)
-\begin{DoxyCompactList}\small\item\em Main method\+: Implementing the additive synthesis of $\sim$addsi~\newline
- Processes the wave tables. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{structaddsi_a14c4f3db700edafd0b55623e92360709}{addsi\+\_\+setbasefrequency}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x, float \mbox{\hyperlink{structaddsi_a79ca010c0b70a5b34c49c2969cfdd653}{basefrequency}})
+\begin{DoxyCompactList}\small\item\em Main method\+: Implementing the additive synthesis of addsi$\sim$~\newline
+ processes the wave tables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structaddsi_ac96eb3fe90fa6308c30ae0b5560fd354}{addsi\+\_\+set\+Frequency}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x, float \mbox{\hyperlink{structaddsi_acdfc8898c9e67fbcec81f3b04ae61bd9}{frequency}})
 \begin{DoxyCompactList}\small\item\em Sets a base frequency for the osc~\newline
  \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structaddsi_a97698cef413ff568248ae1287241bb5a}{addsi\+\_\+set\+L\+F\+O1frequency}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x, float \mbox{\hyperlink{structaddsi_a6d9c3391c6b806109d92b8302341d5ab}{L\+F\+O1frequency}})
-\begin{DoxyCompactList}\small\item\em Sets the strength of the first L\+FO~\newline
+\begin{DoxyCompactList}\small\item\em Sets the frequency of the first L\+FO~\newline
  \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structaddsi_a846bcf30812aa9f1c2327ea81fcfc443}{addsi\+\_\+set\+L\+F\+O2frequency}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x, float \mbox{\hyperlink{structaddsi_a10e8fb95819ffa362cda5529d008b427}{L\+F\+O2frequency}})
-\begin{DoxyCompactList}\small\item\em Sets the strength of the second L\+FO~\newline
+\begin{DoxyCompactList}\small\item\em Sets the frequency of the second L\+F\+O2~\newline
  \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{structaddsi_a03cbfa8397b86e66a04f86806972b6eb}{addsi\+\_\+setnumber\+Of\+Harmonics}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x, float \mbox{\hyperlink{structaddsi_a0d49cc95e0fee75aae18104263d5073c}{number\+Of\+Harmonics}})
+void \mbox{\hyperlink{structaddsi_ad979f87848b258a9c021753b7aa6b13e}{addsi\+\_\+set\+Harmonics}} (\mbox{\hyperlink{structaddsi}{addsi}} $\ast$x, float \mbox{\hyperlink{structaddsi_a0d49cc95e0fee75aae18104263d5073c}{number\+Of\+Harmonics}})
 \begin{DoxyCompactList}\small\item\em Sets the number of partials added to the base frequency~\newline
  \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -89,31 +85,44 @@ Internal data structure containing the parameters for the oscillators and buffer
 Frees the memory~\newline
  Implements mandatory memory management function. 
 
+Frees a addsi object~\newline
+
+
 
 \begin{DoxyParams}{Parameters}
 {\em $\ast$x} & pointer to addsi struct~\newline
- \\
+\\
+\hline
+{\em x} & my addsi object ~\newline
+ The function frees the allocated memory~\newline
+ of a addsi object \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{structaddsi_a07b45b069efcbaefd3061e53520210ba}\label{structaddsi_a07b45b069efcbaefd3061e53520210ba}} 
+\mbox{\Hypertarget{structaddsi_ae5828e2f2ef6904ca9609f91c6961532}\label{structaddsi_ae5828e2f2ef6904ca9609f91c6961532}} 
 \index{addsi@{addsi}!addsi\_new@{addsi\_new}}
 \index{addsi\_new@{addsi\_new}!addsi@{addsi}}
 \doxysubsubsection{\texorpdfstring{addsi\_new()}{addsi\_new()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structaddsi}{addsi}} $\ast$ addsi\+\_\+new (\begin{DoxyParamCaption}\item[{int}]{sample\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structaddsi}{addsi}} $\ast$ addsi\+\_\+new (\begin{DoxyParamCaption}\item[{int}]{table\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
 
 
 
 Sets up new addsi object on first run and creates wave tables~\newline
  This function sets up all we need to get started with processing. 
 
+Creates a new addsi object~\newline
+
+
 
 \begin{DoxyParams}{Parameters}
-{\em sample\+Rate} & int containing the used sample rate. Note that at this time this is hard coded to 44100 in \mbox{\hyperlink{addsi__pd_8c}{addsi\+\_\+pd.\+c}} and will not work with differing sample rates~\newline
+{\em table\+Size} & int containing the used sample rate. Note that at this time this is hard coded to 44100 in \mbox{\hyperlink{addsi__pd_8c}{addsi\+\_\+pd.\+c}} and will not work with differing sample rates~\newline
  \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 An addsi struct ~\newline
+
+
+a pointer to the newly created addsi object ~\newline
  
 \end{DoxyReturn}
 \mbox{\Hypertarget{structaddsi_accd8c84d1e98bed24fc3f77df7d799b5}\label{structaddsi_accd8c84d1e98bed24fc3f77df7d799b5}} 
@@ -124,8 +133,11 @@ An addsi struct ~\newline
 
 
 
-Main method\+: Implementing the additive synthesis of $\sim$addsi~\newline
- Processes the wave tables. 
+Main method\+: Implementing the additive synthesis of addsi$\sim$~\newline
+ processes the wave tables. 
+
+Performs the additive synthesis in realtime. ~\newline
+
 
 
 \begin{DoxyParams}{Parameters}
@@ -141,25 +153,78 @@ Main method\+: Implementing the additive synthesis of $\sim$addsi~\newline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 An addsi struct ~\newline
- 
+
 \end{DoxyReturn}
-\mbox{\Hypertarget{structaddsi_a14c4f3db700edafd0b55623e92360709}\label{structaddsi_a14c4f3db700edafd0b55623e92360709}} 
-\index{addsi@{addsi}!addsi\_setbasefrequency@{addsi\_setbasefrequency}}
-\index{addsi\_setbasefrequency@{addsi\_setbasefrequency}!addsi@{addsi}}
-\doxysubsubsection{\texorpdfstring{addsi\_setbasefrequency()}{addsi\_setbasefrequency()}}
-{\footnotesize\ttfamily void addsi\+\_\+setbasefrequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi}{addsi}} $\ast$}]{x,  }\item[{float}]{basefrequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & my addsi object ~\newline
+ \\
+\hline
+{\em in} & The input vector ~\newline
+ \\
+\hline
+{\em out} & The output vector ~\newline
+ \\
+\hline
+{\em vector\+\_\+size} & The size of the i/o vectors ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structaddsi_ac96eb3fe90fa6308c30ae0b5560fd354}\label{structaddsi_ac96eb3fe90fa6308c30ae0b5560fd354}} 
+\index{addsi@{addsi}!addsi\_setFrequency@{addsi\_setFrequency}}
+\index{addsi\_setFrequency@{addsi\_setFrequency}!addsi@{addsi}}
+\doxysubsubsection{\texorpdfstring{addsi\_setFrequency()}{addsi\_setFrequency()}}
+{\footnotesize\ttfamily void addsi\+\_\+set\+Frequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi}{addsi}} $\ast$}]{x,  }\item[{float}]{frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
 
 
 
 Sets a base frequency for the osc~\newline
  
 
+Sets the frequency in Hz with floating point precision. ~\newline
+
+
 
 \begin{DoxyParams}{Parameters}
 {\em x} & A pointer to the addsi object ~\newline
  \\
 \hline
-{\em basefrequency} & float containing the Hz value of the base frequency of the osc ~\newline
+{\em frequency} & float containing the Hz value of the base frequency of the osc ~\newline
+\\
+\hline
+{\em x} & my addsi object ~\newline
+ \\
+\hline
+{\em frequency} & Frequency in Hz ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structaddsi_ad979f87848b258a9c021753b7aa6b13e}\label{structaddsi_ad979f87848b258a9c021753b7aa6b13e}} 
+\index{addsi@{addsi}!addsi\_setHarmonics@{addsi\_setHarmonics}}
+\index{addsi\_setHarmonics@{addsi\_setHarmonics}!addsi@{addsi}}
+\doxysubsubsection{\texorpdfstring{addsi\_setHarmonics()}{addsi\_setHarmonics()}}
+{\footnotesize\ttfamily void addsi\+\_\+set\+Harmonics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi}{addsi}} $\ast$}]{x,  }\item[{float}]{number\+Of\+Harmonics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets the number of partials added to the base frequency~\newline
+ 
+
+Sets the number of the partials. ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
+ \\
+\hline
+{\em number\+Of\+Harmonics} & float value setting the number of partials~\newline
+\\
+\hline
+{\em x} & my addsi object ~\newline
+ \\
+\hline
+{\em number\+Of\+Harmonics} & Number of Partials ~\newline
  \\
 \hline
 \end{DoxyParams}
@@ -171,15 +236,24 @@ Sets a base frequency for the osc~\newline
 
 
 
-Sets the strength of the first L\+FO~\newline
+Sets the frequency of the first L\+FO~\newline
  
+
+Sets the frequency of L\+F\+O1 in Hz with floating point precision. ~\newline
+
 
 
 \begin{DoxyParams}{Parameters}
 {\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
  \\
 \hline
-{\em L\+F\+O1frequency} & float value setting the strength of the first L\+FO~\newline
+{\em L\+F\+O1frequency} & float value setting the frequency of the first L\+FO~\newline
+\\
+\hline
+{\em x} & my addsi object ~\newline
+ \\
+\hline
+{\em L\+F\+O1frequency} & Frequency in Hz ~\newline
  \\
 \hline
 \end{DoxyParams}
@@ -191,66 +265,43 @@ Sets the strength of the first L\+FO~\newline
 
 
 
-Sets the strength of the second L\+FO~\newline
+Sets the frequency of the second L\+F\+O2~\newline
  
+
+Sets the frequency of L\+F\+O2 in Hz with floating point precision. ~\newline
+
 
 
 \begin{DoxyParams}{Parameters}
 {\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
  \\
 \hline
-{\em L\+F\+O2frequency} & float value setting the strength of the second L\+FO~\newline
+{\em L\+F\+O2frequency} & float value setting the frequency of the second L\+FO~\newline
+\\
+\hline
+{\em x} & my addsi object ~\newline
  \\
 \hline
-\end{DoxyParams}
-\mbox{\Hypertarget{structaddsi_a03cbfa8397b86e66a04f86806972b6eb}\label{structaddsi_a03cbfa8397b86e66a04f86806972b6eb}} 
-\index{addsi@{addsi}!addsi\_setnumberOfHarmonics@{addsi\_setnumberOfHarmonics}}
-\index{addsi\_setnumberOfHarmonics@{addsi\_setnumberOfHarmonics}!addsi@{addsi}}
-\doxysubsubsection{\texorpdfstring{addsi\_setnumberOfHarmonics()}{addsi\_setnumberOfHarmonics()}}
-{\footnotesize\ttfamily void addsi\+\_\+setnumber\+Of\+Harmonics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structaddsi}{addsi}} $\ast$}]{x,  }\item[{float}]{number\+Of\+Harmonics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
-
-
-
-Sets the number of partials added to the base frequency~\newline
- 
-
-
-\begin{DoxyParams}{Parameters}
-{\em x} & A pointer to an \mbox{\hyperlink{structaddsi__tilde}{addsi\+\_\+tilde}} object ~\newline
- \\
-\hline
-{\em number\+Of\+Harmonics} & float value setting the number of partials~\newline
+{\em L\+F\+O2frequency} & Frequency in Hz ~\newline
  \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Field Documentation}
-\mbox{\Hypertarget{structaddsi_a79ca010c0b70a5b34c49c2969cfdd653}\label{structaddsi_a79ca010c0b70a5b34c49c2969cfdd653}} 
-\index{addsi@{addsi}!basefrequency@{basefrequency}}
-\index{basefrequency@{basefrequency}!addsi@{addsi}}
-\doxysubsubsection{\texorpdfstring{basefrequency}{basefrequency}}
-{\footnotesize\ttfamily float basefrequency}
-
-Working frequency of the sine oscillator \mbox{\Hypertarget{structaddsi_abd40131d012c1d7f6ad152072856a85d}\label{structaddsi_abd40131d012c1d7f6ad152072856a85d}} 
+\mbox{\Hypertarget{structaddsi_abd40131d012c1d7f6ad152072856a85d}\label{structaddsi_abd40131d012c1d7f6ad152072856a85d}} 
 \index{addsi@{addsi}!currentIndex@{currentIndex}}
 \index{currentIndex@{currentIndex}!addsi@{addsi}}
 \doxysubsubsection{\texorpdfstring{currentIndex}{currentIndex}}
 {\footnotesize\ttfamily float current\+Index}
 
-Current working index of the sine oscillator \mbox{\Hypertarget{structaddsi_acb88db8b5268ae7f9802d01dcb85725e}\label{structaddsi_acb88db8b5268ae7f9802d01dcb85725e}} 
-\index{addsi@{addsi}!envelopeIndex@{envelopeIndex}}
-\index{envelopeIndex@{envelopeIndex}!addsi@{addsi}}
-\doxysubsubsection{\texorpdfstring{envelopeIndex}{envelopeIndex}}
-{\footnotesize\ttfamily int envelope\+Index}
+Current working index of the sine oscillator \mbox{\Hypertarget{structaddsi_acdfc8898c9e67fbcec81f3b04ae61bd9}\label{structaddsi_acdfc8898c9e67fbcec81f3b04ae61bd9}} 
+\index{addsi@{addsi}!frequency@{frequency}}
+\index{frequency@{frequency}!addsi@{addsi}}
+\doxysubsubsection{\texorpdfstring{frequency}{frequency}}
+{\footnotesize\ttfamily float frequency}
 
-Current working index in envelope\+Table. Currently this is not used \mbox{\Hypertarget{structaddsi_a18d9552b00028f65d7e930bab7e41abe}\label{structaddsi_a18d9552b00028f65d7e930bab7e41abe}} 
-\index{addsi@{addsi}!envelopeTable@{envelopeTable}}
-\index{envelopeTable@{envelopeTable}!addsi@{addsi}}
-\doxysubsubsection{\texorpdfstring{envelopeTable}{envelopeTable}}
-{\footnotesize\ttfamily float$\ast$ envelope\+Table}
-
-Help array for enveloping. Currently this is not used \mbox{\Hypertarget{structaddsi_a0d73236affa699a885deab31e5f61b20}\label{structaddsi_a0d73236affa699a885deab31e5f61b20}} 
+Working frequency of the sine oscillator \mbox{\Hypertarget{structaddsi_a0d73236affa699a885deab31e5f61b20}\label{structaddsi_a0d73236affa699a885deab31e5f61b20}} 
 \index{addsi@{addsi}!harmonicGain@{harmonicGain}}
 \index{harmonicGain@{harmonicGain}!addsi@{addsi}}
 \doxysubsubsection{\texorpdfstring{harmonicGain}{harmonicGain}}
@@ -268,11 +319,11 @@ Index of Harmonics, size is set by definition of M\+A\+X\+N\+U\+M\+B\+E\+R\+O\+F
 \doxysubsubsection{\texorpdfstring{LFO1\_currentIndex}{LFO1\_currentIndex}}
 {\footnotesize\ttfamily float L\+F\+O1\+\_\+current\+Index}
 
-Current working index of lfo1\+\_\+table \mbox{\Hypertarget{structaddsi_ad8daf709533685590ef0d6f8692fe865}\label{structaddsi_ad8daf709533685590ef0d6f8692fe865}} 
+Current working index of lfo1\+\_\+table \mbox{\Hypertarget{structaddsi_ad2208586fec057367ba705d92f83ca03}\label{structaddsi_ad2208586fec057367ba705d92f83ca03}} 
 \index{addsi@{addsi}!LFO1\_depth@{LFO1\_depth}}
 \index{LFO1\_depth@{LFO1\_depth}!addsi@{addsi}}
 \doxysubsubsection{\texorpdfstring{LFO1\_depth}{LFO1\_depth}}
-{\footnotesize\ttfamily float L\+F\+O1\+\_\+depth}
+{\footnotesize\ttfamily int L\+F\+O1\+\_\+depth}
 
 Depth of the first L\+FO \mbox{\Hypertarget{structaddsi_a7cb3662ff929b2c505458143158d5648}\label{structaddsi_a7cb3662ff929b2c505458143158d5648}} 
 \index{addsi@{addsi}!LFO1\_Table@{LFO1\_Table}}
@@ -292,11 +343,11 @@ Working frequency of the first L\+FO \mbox{\Hypertarget{structaddsi_a1f13be2e30e
 \doxysubsubsection{\texorpdfstring{LFO2\_currentIndex}{LFO2\_currentIndex}}
 {\footnotesize\ttfamily float L\+F\+O2\+\_\+current\+Index}
 
-Current working index of lfo2\+\_\+table \mbox{\Hypertarget{structaddsi_a9c0692a02ea387a66aae3f6cf31dd451}\label{structaddsi_a9c0692a02ea387a66aae3f6cf31dd451}} 
+Current working index of lfo2\+\_\+table \mbox{\Hypertarget{structaddsi_ae7b041443c35bcd91991fa032a65b470}\label{structaddsi_ae7b041443c35bcd91991fa032a65b470}} 
 \index{addsi@{addsi}!LFO2\_depth@{LFO2\_depth}}
 \index{LFO2\_depth@{LFO2\_depth}!addsi@{addsi}}
 \doxysubsubsection{\texorpdfstring{LFO2\_depth}{LFO2\_depth}}
-{\footnotesize\ttfamily float L\+F\+O2\+\_\+depth}
+{\footnotesize\ttfamily int L\+F\+O2\+\_\+depth}
 
 Depth of the second L\+FO \mbox{\Hypertarget{structaddsi_ab79fed73591643ea16ede621a029b1bd}\label{structaddsi_ab79fed73591643ea16ede621a029b1bd}} 
 \index{addsi@{addsi}!LFO2\_Table@{LFO2\_Table}}
@@ -310,11 +361,11 @@ Working array of the second L\+FO \mbox{\Hypertarget{structaddsi_a10e8fb95819ffa
 \doxysubsubsection{\texorpdfstring{LFO2frequency}{LFO2frequency}}
 {\footnotesize\ttfamily float L\+F\+O2frequency}
 
-Working frequency of the second L\+FO \mbox{\Hypertarget{structaddsi_a403dc1fdf7e92a0e977cf095989efb9b}\label{structaddsi_a403dc1fdf7e92a0e977cf095989efb9b}} 
-\index{addsi@{addsi}!lookupTable1@{lookupTable1}}
-\index{lookupTable1@{lookupTable1}!addsi@{addsi}}
-\doxysubsubsection{\texorpdfstring{lookupTable1}{lookupTable1}}
-{\footnotesize\ttfamily float$\ast$ lookup\+Table1}
+Working frequency of the second L\+FO \mbox{\Hypertarget{structaddsi_a4c0ef6e62abb50c12f166caa44696d9d}\label{structaddsi_a4c0ef6e62abb50c12f166caa44696d9d}} 
+\index{addsi@{addsi}!lookupTable@{lookupTable}}
+\index{lookupTable@{lookupTable}!addsi@{addsi}}
+\doxysubsubsection{\texorpdfstring{lookupTable}{lookupTable}}
+{\footnotesize\ttfamily float$\ast$ lookup\+Table}
 
 S\+Ine wave table \mbox{\Hypertarget{structaddsi_a0d49cc95e0fee75aae18104263d5073c}\label{structaddsi_a0d49cc95e0fee75aae18104263d5073c}} 
 \index{addsi@{addsi}!numberOfHarmonics@{numberOfHarmonics}}

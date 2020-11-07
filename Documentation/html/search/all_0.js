@@ -1,12 +1,24 @@
 var searchData=
 [
-  ['_5fatom_0',['_atom',['../struct__atom.html',1,'']]],
-  ['_5fgobj_1',['_gobj',['../struct__gobj.html',1,'']]],
-  ['_5fgpointer_2',['_gpointer',['../struct__gpointer.html',1,'']]],
-  ['_5fgstub_3',['_gstub',['../struct__gstub.html',1,'']]],
-  ['_5fresample_4',['_resample',['../struct__resample.html',1,'']]],
-  ['_5fscalar_5',['_scalar',['../struct__scalar.html',1,'']]],
-  ['_5fsignal_6',['_signal',['../struct__signal.html',1,'']]],
-  ['_5fsymbol_7',['_symbol',['../struct__symbol.html',1,'']]],
-  ['_5ftext_8',['_text',['../struct__text.html',1,'']]]
+  ['addsi_0',['addsi',['../structaddsi.html',1,'']]],
+  ['addsi_2ec_1',['addsi.c',['../addsi_8c.html',1,'']]],
+  ['addsi_2eh_2',['addsi.h',['../addsi_8h.html',1,'']]],
+  ['addsi_5ffree_3',['addsi_free',['../structaddsi.html#ad240d3c54471ef024010c289fcb5f8e3',1,'addsi']]],
+  ['addsi_5fnew_4',['addsi_new',['../structaddsi.html#ae5828e2f2ef6904ca9609f91c6961532',1,'addsi']]],
+  ['addsi_5fpd_2ec_5',['addsi_pd.c',['../addsi__pd_8c.html',1,'']]],
+  ['addsi_5fprocess_6',['addsi_process',['../structaddsi.html#accd8c84d1e98bed24fc3f77df7d799b5',1,'addsi']]],
+  ['addsi_5fsetfrequency_7',['addsi_setFrequency',['../structaddsi.html#ac96eb3fe90fa6308c30ae0b5560fd354',1,'addsi']]],
+  ['addsi_5fsetharmonics_8',['addsi_setHarmonics',['../structaddsi.html#ad979f87848b258a9c021753b7aa6b13e',1,'addsi']]],
+  ['addsi_5fsetlfo1frequency_9',['addsi_setLFO1frequency',['../structaddsi.html#a97698cef413ff568248ae1287241bb5a',1,'addsi']]],
+  ['addsi_5fsetlfo2frequency_10',['addsi_setLFO2frequency',['../structaddsi.html#a846bcf30812aa9f1c2327ea81fcfc443',1,'addsi']]],
+  ['addsi_5ftilde_11',['addsi_tilde',['../structaddsi__tilde.html',1,'']]],
+  ['addsi_5ftilde_5fdsp_12',['addsi_tilde_dsp',['../structaddsi__tilde.html#a05f6a6c36c9f3b8b5b8e024918a3814c',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5ffree_13',['addsi_tilde_free',['../structaddsi__tilde.html#a08150a75089ce62c3438c51a5bc3ff6b',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5fnew_14',['addsi_tilde_new',['../structaddsi__tilde.html#a4c2e0b57ce0971af4e346ac8125b4201',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5fperform_15',['addsi_tilde_perform',['../structaddsi__tilde.html#a49a43c8620f1a89cef0a71df6911616b',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5fsetfrequency_16',['addsi_tilde_setFrequency',['../structaddsi__tilde.html#a3f0d57788dc28c8a9bf76b7d139aa291',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5fsetharmonics_17',['addsi_tilde_setHarmonics',['../structaddsi__tilde.html#a9339ca7d906ca699c0cd0e5b1c06bd59',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5fsetlfo1frequency_18',['addsi_tilde_setLFO1frequency',['../structaddsi__tilde.html#a98c1bd6faab1c4429b560442c3dd5308',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5fsetlfo2frequency_19',['addsi_tilde_setLFO2frequency',['../structaddsi__tilde.html#a0495e70dcb5bf0d217e6e8c79050e26b',1,'addsi_tilde']]],
+  ['addsi_5ftilde_5fsetup_20',['addsi_tilde_setup',['../structaddsi__tilde.html#addceefe58fa9a5ac9bf2336eeb6d36c9',1,'addsi_tilde']]]
 ];

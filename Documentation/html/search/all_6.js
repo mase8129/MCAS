@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['harmonicgain_35',['harmonicGain',['../structaddsi.html#a0d73236affa699a885deab31e5f61b20',1,'addsi']]],
-  ['harmonicindex_36',['harmonicIndex',['../structaddsi.html#afb391d24efd3275abc6150aa9f753fee',1,'addsi']]]
+  ['osc_36',['osc',['../structaddsi__tilde.html#a4e799f19e7943eb56d0ba53262febf53',1,'addsi_tilde']]],
+  ['out_37',['out',['../structaddsi__tilde.html#a07b901a5d7d4140b7f701a94bf7f245c',1,'addsi_tilde']]]
 ];

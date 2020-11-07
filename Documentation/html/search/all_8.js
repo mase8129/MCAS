@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motion_20controlled_20additive_20synthesis_46',['Motion Controlled Additive Synthesis',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['x_5fobj_39',['x_obj',['../structaddsi__tilde.html#aec9b618f42517cd6740f1d37dba87d0a',1,'addsi_tilde']]]
 ];
