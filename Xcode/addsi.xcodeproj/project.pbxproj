@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B9FCAEE253DE9D400F98686 /* addsi_pd.c in Sources */ = {isa = PBXBuildFile; fileRef = 841712CB2091E46A00B02D54 /* addsi_pd.c */; };
+		8B9FCAEF253DE9D400F98686 /* vas_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = E46AFD0B249212A700EEDF61 /* vas_mem.c */; };
+		8B9FCAF0253DE9D400F98686 /* addsi.c in Sources */ = {isa = PBXBuildFile; fileRef = E4B4F704249A6DD00065E4A4 /* addsi.c */; };
+		8B9FCAF3253DE9D400F98686 /* m_pd.h in Headers */ = {isa = PBXBuildFile; fileRef = 844237651FB4A69D005ACA50 /* m_pd.h */; };
+		8B9FCAF4253DE9D400F98686 /* addsi.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B4F705249A6DD00065E4A4 /* addsi.h */; };
+		8B9FCAF5253DE9D400F98686 /* vas_util.h in Headers */ = {isa = PBXBuildFile; fileRef = E46AFD0F249212AD00EEDF61 /* vas_util.h */; };
+		8B9FCAF6253DE9D400F98686 /* vas_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = E46AFD0E249212AD00EEDF61 /* vas_mem.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		841712CB2091E46A00B02D54 /* addsi_pd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = addsi_pd.c; sourceTree = "<group>"; };
+		844237651FB4A69D005ACA50 /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
+		8B9148B1253DECCF00F464E3 /* addsi~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = "addsi~.pd_darwin"; path = "/Users/riccardo/Desktop/addsi~new_nov/build/Debug/addsi~.pd_darwin"; sourceTree = "<absolute>"; };
+		E46AFD0B249212A700EEDF61 /* vas_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vas_mem.c; sourceTree = "<group>"; };
+		E46AFD0E249212AD00EEDF61 /* vas_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vas_mem.h; sourceTree = "<group>"; };
+		E46AFD0F249212AD00EEDF61 /* vas_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vas_util.h; sourceTree = "<group>"; };
+		E4B4F704249A6DD00065E4A4 /* addsi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = addsi.c; sourceTree = "<group>"; };
+		E4B4F705249A6DD00065E4A4 /* addsi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addsi.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B9FCAF1253DE9D400F98686 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA2927E31A899B4C005A2BA9 = {
+			isa = PBXGroup;
+			children = (
+				E4B4F704249A6DD00065E4A4 /* addsi.c */,
+				E4B4F705249A6DD00065E4A4 /* addsi.h */,
+				841712CB2091E46A00B02D54 /* addsi_pd.c */,
+				E46AFD0B249212A700EEDF61 /* vas_mem.c */,
+				E46AFD0E249212AD00EEDF61 /* vas_mem.h */,
+				E46AFD0F249212AD00EEDF61 /* vas_util.h */,
+				844237651FB4A69D005ACA50 /* m_pd.h */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8B9FCAF2253DE9D400F98686 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B9FCAF3253DE9D400F98686 /* m_pd.h in Headers */,
+				8B9FCAF4253DE9D400F98686 /* addsi.h in Headers */,
+				8B9FCAF5253DE9D400F98686 /* vas_util.h in Headers */,
+				8B9FCAF6253DE9D400F98686 /* vas_mem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8B9FCAEC253DE9D400F98686 /* addsi~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B9FCAF7253DE9D400F98686 /* Build configuration list for PBXNativeTarget "addsi~" */;
+			buildPhases = (
+				8B9FCAED253DE9D400F98686 /* Sources */,
+				8B9FCAF1253DE9D400F98686 /* Frameworks */,
+				8B9FCAF2253DE9D400F98686 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "addsi~";
+			productName = "HelloWorld-pd-external";
+			productReference = 8B9148B1253DECCF00F464E3 /* addsi~.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA2927E41A899B4C005A2BA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Intrinsic Audio";
+			};
+			buildConfigurationList = FA2927E71A899B4C005A2BA9 /* Build configuration list for PBXProject "addsi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA2927E31A899B4C005A2BA9;
+			productRefGroup = FA2927E31A899B4C005A2BA9;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B9FCAEC253DE9D400F98686 /* addsi~ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B9FCAED253DE9D400F98686 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B9FCAEE253DE9D400F98686 /* addsi_pd.c in Sources */,
+				8B9FCAEF253DE9D400F98686 /* vas_mem.c in Sources */,
+				8B9FCAF0253DE9D400F98686 /* addsi.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8B9FCAF8253DE9D400F98686 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_OPTIMIZATION_PROFILE_FILE = "";
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				EXECUTABLE_PREFIX = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUREDATA,
+					VAS_OUTPUTVECTOR_USE_FLOAT,
+					VAS_INPUTVECTOR_USE_FLOAT,
+				);
+				INSTALL_PATH = "/Users/riccardo/Desktop/Pd-0.51-1.app/Contents/Resources/extra";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		8B9FCAF9253DE9D400F98686 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_OPTIMIZATION_PROFILE_FILE = "";
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				EXECUTABLE_PREFIX = "";
+				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUREDATA,
+					VAS_OUTPUTVECTOR_USE_FLOAT,
+					VAS_INPUTVECTOR_USE_FLOAT,
+				);
+				INSTALL_PATH = "/Users/riccardo/Desktop/Pd-0.51-1.app/Contents/Resources/extra";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+		FA2927EE1A899B4C005A2BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Applications/Pd-0.49-1.app/Contents/Resources/extra ";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FA2927EF1A899B4C005A2BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Applications/Pd-0.49-1.app/Contents/Resources/extra ";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B9FCAF7253DE9D400F98686 /* Build configuration list for PBXNativeTarget "addsi~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B9FCAF8253DE9D400F98686 /* Debug */,
+				8B9FCAF9253DE9D400F98686 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA2927E71A899B4C005A2BA9 /* Build configuration list for PBXProject "addsi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA2927EE1A899B4C005A2BA9 /* Debug */,
+				FA2927EF1A899B4C005A2BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA2927E41A899B4C005A2BA9 /* Project object */;
+}

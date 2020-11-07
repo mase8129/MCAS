@@ -104,7 +104,7 @@ typedef struct _gstub
 typedef struct _gpointer           /* pointer to a gobj in a glist */
 {
     union
-    {
+    {   
         struct _scalar *gp_scalar;  /* scalar we're in (if glist) */
         union word *gp_w;           /* raw data (if array) */
     } gp_un;
@@ -132,7 +132,7 @@ typedef enum
     A_COMMA,
     A_DEFFLOAT,
     A_DEFSYM,
-    A_DOLLAR,
+    A_DOLLAR, 
     A_DOLLSYM,
     A_GIMME,
     A_CANT
@@ -408,7 +408,7 @@ EXTERN t_parentwidgetbehavior *pd_getparentwidget(t_pd *x);
 
 EXTERN t_class *class_new(t_symbol *name, t_newmethod newmethod,
     t_method freemethod, size_t size, int flags, t_atomtype arg1, ...);
-EXTERN void class_addcreator(t_newmethod newmethod, t_symbol *s,
+EXTERN void class_addcreator(t_newmethod newmethod, t_symbol *s, 
     t_atomtype type1, ...);
 EXTERN void class_addmethod(t_class *c, t_method fn, t_symbol *sel,
     t_atomtype arg1, ...);
@@ -480,7 +480,7 @@ EXTERN double sys_getrealtime(void);
 EXTERN int (*sys_idlehook)(void);   /* hook to add idle time computation */
 
 
-/* ------------  threading ------------------- */
+/* ------------  threading ------------------- */ 
 EXTERN void sys_lock(void);
 EXTERN void sys_unlock(void);
 EXTERN int sys_trylock(void);
@@ -576,7 +576,7 @@ EXTERN t_float dbtopow(t_float);
 
 EXTERN t_float q8_sqrt(t_float);
 EXTERN t_float q8_rsqrt(t_float);
-#ifndef N32
+#ifndef N32     
 EXTERN t_float qsqrt(t_float);  /* old names kept for extern compatibility */
 EXTERN t_float qrsqrt(t_float);
 #endif

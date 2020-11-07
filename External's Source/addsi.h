@@ -14,55 +14,100 @@
 #include <math.h>
 #include "vas_mem.h"
 #include "vas_util.h"
-    
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef M_PI
 #define M_PI (3.141592654)
 #endif
-#define TWOPI (2.0 * M_PI)
-    
-#define MAXNUMBEROFHARMONICS 32
 
+#ifndef MAXNUMBEROFHARMONICS
+#define MAXNUMBEROFHARMONICS (100)
+#endif
+    
 /**
  * @struct addsi
  * @brief Internal data structure containing the parameters for the oscillators and buffer data variables <br>
- *
  */
+
 typedef struct addsi
-    {
-        int tableSize; /**< Size of waveform tables, based on sample rate. Note that this is hard coded to 44100 in this external*/
-        float currentIndex; /**< Current working index of the sine oscillator */
-        float basefrequency; /**< Working frequency of the sine oscillator*/
-        float *lookupTable1; /**< SIne wave table*/
-        int numberOfHarmonics; /**< Number of added harmonics to the baseFrequency*/
-        float harmonicIndex[MAXNUMBEROFHARMONICS]; /**< Index of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
-        float harmonicGain[MAXNUMBEROFHARMONICS]; /**< Gain of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
-        float *envelopeTable; /**< Help array for enveloping. Currently this is not used*/
-        int envelopeIndex; /**< Current working index in envelopeTable. Currently this is not used*/
-        float *LFO1_Table; /**< Working array of the first LFO */
-        float LFO1frequency; /**<  Working frequency of the first LFO*/
-        float LFO1_depth; /**< Depth of the first LFO */
-        float LFO1_currentIndex; /**< Current working index of lfo1_table */
-        float *LFO2_Table; /**< Working array of the second LFO */
-        float LFO2frequency; /**< Working frequency of the second LFO */
-        float LFO2_depth; /**< Depth of the second LFO */
-        float LFO2_currentIndex; /**< Current working index of lfo2_table*/
-        
-    } addsi;
+{
+    int tableSize; /**< Size of waveform tables, based on sample rate. Note that this is hard coded to 44100 in this external*/
+    float currentIndex;/**< Current working index of the sine oscillator */
+    float frequency;/**< Working frequency of the sine oscillator*/
+    float *lookupTable;/**< SIne wave table*/
+    int numberOfHarmonics;/**< Number of added harmonics to the baseFrequency*/
+    float harmonicIndex[MAXNUMBEROFHARMONICS];/**< Index of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
+    float harmonicGain[MAXNUMBEROFHARMONICS];/**< Gain of Harmonics, size is set by definition of  MAXNUMBEROFHARMONICS in addsi.h*/
+    float *LFO1_Table;/**< Working array of the first LFO */
+    float LFO1frequency;/**<  Working frequency of the first LFO*/
+    int LFO1_depth;/**< Depth of the first LFO */
+    float LFO1_currentIndex;/**< Current working index of lfo1_table */
+    float *LFO2_Table;/**< Working array of the second LFO */
+    float LFO2frequency; /**< Working frequency of the second LFO */
+    int LFO2_depth;/**< Depth of the second LFO */
+    float LFO2_currentIndex;/**< Current working index of lfo2_table*/
 
-// function declarations for addsi_pd.c
+} addsi;
 
+/**
+ * @related addsi
+ * @brief Creates a new addsi object<br>
+ * @return a pointer to the newly created addsi object <br>
+ */
 addsi *addsi_new(int tableSize);
 
+/**
+ * @related addsi
+ * @brief Frees a addsi object<br>
+ * @param x my addsi object <br>
+ * The function frees the allocated memory<br>
+ * of a addsi object
+ */
 void addsi_free(addsi *x);
-    
+
+/**
+ * @related addsi
+ * @brief Performs the additive synthesis in realtime. <br>
+ * @param x my addsi object <br>
+ * @param in The input vector <br>
+ * @param out The output vector <br>
+ * @param vector_size The size of the i/o vectors <br>
+ */
 void addsi_process(addsi *x, float *in, float *out, int vector_size);
 
-void addsi_setbasefrequency(addsi *x, float basefrequency);
+/**
+ * @related addsi
+ * @brief Sets the frequency in Hz with floating point precision. <br>
+ * @param x my addsi object <br>
+ * @param frequency Frequency in Hz <br>
+ */
+void addsi_setFrequency(addsi *x, float frequency);
 
+/**
+ * @related addsi
+ * @brief Sets the frequency of LFO1 in Hz with floating point precision. <br>
+ * @param x my addsi object <br>
+ * @param LFO1frequency Frequency in Hz <br>
+ */
 void addsi_setLFO1frequency(addsi *x, float LFO1frequency);
-    
+
+/**
+ * @related addsi
+ * @brief Sets the frequency of LFO2 in Hz with floating point precision. <br>
+ * @param x my addsi object <br>
+ * @param LFO2frequency Frequency in Hz <br>
+ */
 void addsi_setLFO2frequency(addsi *x, float LFO2frequency);
 
-void addsi_setnumberOfHarmonics(addsi *x, float numberOfHarmonics);
+/**
+ * @related addsi
+ * @brief Sets the number of the partials. <br>
+ * @param x my addsi object <br>
+ * @param numberOfHarmonics Number of Partials <br>
+ */
+void addsi_setHarmonics(addsi *x, float numberOfHarmonics);
 
 #endif /* addsi_h */

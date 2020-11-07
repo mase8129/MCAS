@@ -5,7 +5,6 @@
  * @brief Pure data integration of the addsi external<br>
  * The file includes the basic setup needed in order for the external to work with pure data
  */
-
 #include "m_pd.h"
 #include "addsi.h"
 
@@ -34,7 +33,6 @@ typedef struct addsi_tilde
     t_outlet *out; /**< needed to store handles to the outlet of the signal*/
 } addsi_tilde;
 
-
 /**
  * @related addsi_tilde
  * @brief Perform function, mandatory for PureData. Calculates the output vector<br>
@@ -42,6 +40,7 @@ typedef struct addsi_tilde
  * @param w A pointer to the object, input and output vectors. <br>
  * @return A pointer to the signal chain right behind the addsi_tilde object. <br>
  */
+
 t_int *addsi_tilde_perform(t_int *w)
 {
     addsi_tilde *x = (addsi_tilde *)(w[1]);
@@ -49,7 +48,7 @@ t_int *addsi_tilde_perform(t_int *w)
     t_sample  *out =  (t_sample *)(w[3]);
     int n =  (int)(w[4]);
 
-   addsi_process(x->osc, in, out, n);
+    addsi_process(x->osc, in, out, n);
 
     /* return a pointer to the dataspace for the next dsp-object */
     return (w+5);
@@ -68,12 +67,12 @@ void addsi_tilde_dsp(addsi_tilde *x, t_signal **sp)
     dsp_add(addsi_tilde_perform, 4, x, sp[0]->s_vec, sp[1]->s_vec, sp[0]->s_n);
 }
 
+
 /**
  * @related addsi_tilde
  * @brief Memory Management function mandatory for Pure Data. Frees our addsi_tilde object. <br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  * @param x A pointer to an addsi_tilde object <br>
-
  */
 
 void addsi_tilde_free(addsi_tilde *x)
@@ -87,6 +86,7 @@ void addsi_tilde_free(addsi_tilde *x)
  * @brief Creates new addsi_tilde object and sets its outlet and sampling rate. note that the externals sampling rate is set at 44100 <br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  */
+
 void *addsi_tilde_new(t_floatarg f)
 {
     addsi_tilde *x = (addsi_tilde *)pd_new(addsi_tilde_class);
@@ -102,26 +102,25 @@ void *addsi_tilde_new(t_floatarg f)
  * @related addsi_tilde
  * @brief Wrapper for the base frequency setting of the sine osc<br>
  * @param x A pointer to an addsi_tilde object <br>
- * @param basefrequency float containing the Hz value of the base frequency of the sine osc <br>
- *
+ * @param frequency float containing the Hz value of the base frequency of the sine osc <br>
  */
-void addsi_tilde_setbasefrequency(addsi_tilde *x, float basefrequency)
+
+void addsi_tilde_setFrequency(addsi_tilde *x, float frequency)
 {
-    addsi_setbasefrequency(x->osc, basefrequency);
+    addsi_setFrequency(x->osc, frequency);
 }
+
 
 /**
  * @related addsi_tilde
  * @brief Wrapper for the strength setting of the first LFO<br>
  * @param x A pointer to an addsi_tilde object <br>
  * @param LFO1frequency float value setting the strength of the first LFO<br>
- *
  */
 void addsi_tilde_setLFO1frequency(addsi_tilde *x, float LFO1frequency)
 {
     addsi_setLFO1frequency(x->osc, LFO1frequency);
 }
-
 
 /**
  * @related addsi_tilde
@@ -130,6 +129,7 @@ void addsi_tilde_setLFO1frequency(addsi_tilde *x, float LFO1frequency)
  * @param LFO2frequency float value setting the strength of the second LFO<br>
  *
  */
+
 void addsi_tilde_setLFO2frequency(addsi_tilde *x, float LFO2frequency)
 {
     addsi_setLFO2frequency(x->osc, LFO2frequency);
@@ -140,11 +140,10 @@ void addsi_tilde_setLFO2frequency(addsi_tilde *x, float LFO2frequency)
  * @brief Wrapper for the number of the partials added to the fundamental frequency <br>
  * @param x A pointer to an addsi_tilde object <br>
  * @param numberOfHarmonics float value setting the number of the partials<br>
- *
  */
-void addsi_tilde_setnumberOfHarmonics(addsi_tilde *x, float numberOfHarmonics)
+void addsi_tilde_setHarmonics(addsi_tilde *x, float numberOfHarmonics)
 {
-    addsi_setnumberOfHarmonics(x->osc, numberOfHarmonics);
+    addsi_setHarmonics(x->osc, numberOfHarmonics);
 }
 
 
@@ -154,23 +153,22 @@ void addsi_tilde_setnumberOfHarmonics(addsi_tilde *x, float numberOfHarmonics)
  * This function (or functions called by it) declares the new classes and their properties of the addsi-tilde external. It is only called once, when the external is loaded. <br>
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  */
-
 void addsi_tilde_setup(void)
 {
-    addsi_tilde_class = class_new(gensym("addsi~"),
-                                      (t_newmethod)addsi_tilde_new,
-                                      (t_method)addsi_tilde_free,
-                                      sizeof(addsi_tilde),
-                                      CLASS_DEFAULT,
-                                      A_DEFFLOAT, 0);
-    
-    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_dsp, gensym("dsp"), 0);
-    
-    // this adds the freq1 message to our object
-    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setbasefrequency, gensym("basefrequency"), A_DEFFLOAT, 0);
-    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO1frequency, gensym("LFO1frequency"), A_DEFFLOAT, 0);
-    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO2frequency, gensym("LFO2frequency"), A_DEFFLOAT, 0);
-    class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setnumberOfHarmonics, gensym("numberOfHarmonics"), A_DEFFLOAT, 0);
-    
-    CLASS_MAINSIGNALIN(addsi_tilde_class, addsi_tilde, f);
+      addsi_tilde_class = class_new(gensym("addsi~"),
+            (t_newmethod)addsi_tilde_new,
+            (t_method)addsi_tilde_free,
+        sizeof(addsi_tilde),
+            CLASS_DEFAULT,
+            A_DEFFLOAT, 0);
+
+      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_dsp, gensym("dsp"), 0);
+
+      // this adds the messages to the addsi~ object
+      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setFrequency, gensym("frequency"), A_DEFFLOAT, 0);
+      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO1frequency, gensym("LFO1frequency"), A_DEFFLOAT, 0);
+      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setLFO2frequency, gensym("LFO2frequency"), A_DEFFLOAT, 0);
+      class_addmethod(addsi_tilde_class, (t_method)addsi_tilde_setHarmonics, gensym("harmonics"), A_DEFFLOAT, 0);
+
+      CLASS_MAINSIGNALIN(addsi_tilde_class, addsi_tilde, f);
 }
