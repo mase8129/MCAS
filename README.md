@@ -1,5 +1,5 @@
 # Motion Controlled Additive Synthesis
-With this we are presenting a additive sound synthesis Pure Data External. Alongside we provide a fun demonstration of controlling it by using smartphone accelerometer and gyroscope data from a smartphone <br />
+With this we are presenting an additive sound synthesis Pure Data External. Alongside we provide a fun demonstration of controlling it by using accelerometer and gyroscope data from a smartphone <br />
 
 ## Where to start?
 
@@ -9,7 +9,7 @@ The repo consist of the external's source code in addition with other needed c f
 In order to use the addsi~ external from **External Binary and Help Patch** you either need to have MacOS running on a 64 bit machine, or you build the external yourself using the provided **External's Source**
 
 ### Using addsi~ with PdParty
-addsi was created to be used with your smartphone! The setup consists of two Pd patches – one on your computer running the addsi~ external embedded in some control logic, and one on your smartphone sending out gyro and accel data to your computer via OSC.
+addsi~ was created to be used with your smartphone! The setup consists of two Pd patches – one on your computer running the addsi~ external embedded in some control logic, and one on your smartphone sending out gyro and accel data to your computer via OSC.
 
 This is how to get going:
 
